@@ -10,3 +10,4 @@ alembic
 psycopg2
 selenium
 webdriver-manager
+requests-html

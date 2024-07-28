@@ -8,10 +8,11 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 import time
 import schemas
+from requests_html import HTMLSession
 
 
 PATH = "C:/Users/User/Desktop/Programs/chromedriver-win64/chromedriver.exe"
-
+URL = "https://food.bolt.eu/en-US/landing"
 
 
 chrome_options = webdriver.ChromeOptions()
@@ -24,7 +25,7 @@ def scrapeBolt(adress: str) -> list[schemas.Restaurant]:
     try:
         driver = webdriver.Chrome(service=service, options=chrome_options)
 
-        driver.get("https://food.bolt.eu/en-US/landing")
+        driver.get(URL)
 
         address_input = WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.CSS_SELECTOR, 'input[placeholder="Enter your address"]'))

@@ -1,0 +1,86 @@
+{
+    "code": 0,
+    "message": "OK",
+    "data": {
+        "suggestions": [
+            {
+                "source": "google",
+                "analytics_type": "Google Address",
+                "address_name": "Naugarduko gatv\u0117",
+                "address_extra": "Vilnius, Vilnius City Municipality, Lithuania",
+                "address_details_level": "other",
+                "full_address": "Naugarduko gatv\u0117, Vilnius, Vilnius City Municipality, Lithuania",
+                "place_id": "google|EkBOYXVnYXJkdWtvIGdhdHbElywgVmlsbml1cywgVmlsbml1cyBDaXR5IE11bmljaXBhbGl0eSwgTGl0aHVhbmlhIi4qLAoUChIJKTvY2W-U3UYRTIKavBZOp2kSFAoSCfUIZFz7k91GEUDc6XCM0QAE",
+                "image_identifier": "DEFAULT",
+                "place_type": "other",
+                "display_index": 0,
+                "meta": {
+                    "initial_selection_source": "google"
+                }
+            },
+            {
+                "source": "google",
+                "analytics_type": "Google Address",
+                "address_name": "Naugardukas",
+                "address_extra": "Belarus",
+                "address_details_level": "other",
+                "full_address": "Naugardukas, Belarus",
+                "place_id": "google|ChIJI4v_zPjE3kYRKYfOu-kxVoQ",
+                "image_identifier": "DEFAULT",
+                "place_type": "other",
+                "display_index": 1,
+                "meta": {
+                    "initial_selection_source": "google"
+                }
+            },
+            {
+                "source": "google",
+                "analytics_type": "Google Places",
+                "address_name": "Naugarduko gatv\u0117s turgus",
+                "address_extra": "Naugarduko gatv\u0117, Vilnius, Vilnius City Municipality, Lithuania",
+                "address_details_level": "other",
+                "full_address": "Naugarduko gatv\u0117s turgus, Naugarduko gatv\u0117, Vilnius, Vilnius City Municipality, Lithuania",
+                "place_id": "google|ChIJj_19HMKV3UYRUtibE1lJPL4",
+                "image_identifier": "DEFAULT",
+                "place_type": "other",
+                "display_index": 2,
+                "meta": {
+                    "initial_selection_source": "google"
+                }
+            },
+            {
+                "source": "google",
+                "analytics_type": "Google Places",
+                "address_name": "Naugarduko g. 14 DNSB",
+                "address_extra": "Naugarduko gatv\u0117, Vilnius, Vilnius City Municipality, Lithuania",
+                "address_details_level": "other",
+                "full_address": "Naugarduko g. 14 DNSB, Naugarduko gatv\u0117, Vilnius, Vilnius City Municipality, Lithuania",
+                "place_id": "google|ChIJTf1mvWyU3UYR5N4x9tSsxBk",
+                "image_identifier": "DEFAULT",
+                "place_type": "other",
+                "display_index": 3,
+                "meta": {
+                    "initial_selection_source": "google"
+                }
+            },
+            {
+                "source": "google",
+                "analytics_type": "Google Address",
+                "address_name": "Naugarduko gatv\u0117",
+                "address_extra": "Marijampol\u0117, Marijampol\u0117 Municipality, Lithuania",
+                "address_details_level": "other",
+                "full_address": "Naugarduko gatv\u0117, Marijampol\u0117, Marijampol\u0117 Municipality, Lithuania",
+                "place_id": "google|EkVOYXVnYXJkdWtvIGdhdHbElywgTWFyaWphbXBvbMSXLCBNYXJpamFtcG9sxJcgTXVuaWNpcGFsaXR5LCBMaXRodWFuaWEiLiosChQKEgmL8lOt-CnhRhG20kqG5aEfrRIUChIJ46ppsIbR4EYRp8mwGQ_ys3E",
+                "image_identifier": "DEFAULT",
+                "place_type": "other",
+                "display_index": 4,
+                "meta": {
+                    "initial_selection_source": "google"
+                }
+            }
+        ],
+        "delivery_location_index": null,
+        "provider_image_url": "https://images.bolt.eu/store/2019/2019-09-20/67cef385-dee6-46f4-b9bc-d7f122ea1501.png",
+        "address_sensitivity_threshold_in_meters": 100
+    }
+}
