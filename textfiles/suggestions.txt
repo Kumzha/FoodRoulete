@@ -4,83 +4,42 @@
     "data": {
         "suggestions": [
             {
-                "source": "google",
-                "analytics_type": "Google Address",
-                "address_name": "Naugarduko gatv\u0117",
-                "address_extra": "Vilnius, Vilnius City Municipality, Lithuania",
-                "address_details_level": "other",
-                "full_address": "Naugarduko gatv\u0117, Vilnius, Vilnius City Municipality, Lithuania",
-                "place_id": "google|EkBOYXVnYXJkdWtvIGdhdHbElywgVmlsbml1cywgVmlsbml1cyBDaXR5IE11bmljaXBhbGl0eSwgTGl0aHVhbmlhIi4qLAoUChIJKTvY2W-U3UYRTIKavBZOp2kSFAoSCfUIZFz7k91GEUDc6XCM0QAE",
+                "source": "internal",
+                "analytics_type": "Internal Address",
+                "address_name": "Gatv\u0117 Naugarduko 3",
+                "address_extra": "Vilnius",
+                "address_details_level": "street_number",
+                "full_address": "Gatv\u0117 Naugarduko 3, Vilnius",
+                "lat": 54.677659,
+                "lng": 25.27727,
+                "place_id": "internal|openaddresses:address:lt/countrywide:7d9b4539d325bd72",
                 "image_identifier": "DEFAULT",
                 "place_type": "other",
                 "display_index": 0,
                 "meta": {
-                    "initial_selection_source": "google"
+                    "initial_selection_source": "internal"
                 }
             },
             {
-                "source": "google",
-                "analytics_type": "Google Address",
-                "address_name": "Naugardukas",
-                "address_extra": "Belarus",
-                "address_details_level": "other",
-                "full_address": "Naugardukas, Belarus",
-                "place_id": "google|ChIJI4v_zPjE3kYRKYfOu-kxVoQ",
+                "source": "internal",
+                "analytics_type": "Internal Address",
+                "address_name": "Gatv\u0117 Naugarduko 3",
+                "address_extra": "Alytus",
+                "address_details_level": "street_number",
+                "full_address": "Gatv\u0117 Naugarduko 3, Alytus",
+                "lat": 54.400432,
+                "lng": 24.087738,
+                "place_id": "internal|openaddresses:address:lt/countrywide:58f521514e4366b2",
                 "image_identifier": "DEFAULT",
                 "place_type": "other",
                 "display_index": 1,
                 "meta": {
-                    "initial_selection_source": "google"
-                }
-            },
-            {
-                "source": "google",
-                "analytics_type": "Google Places",
-                "address_name": "Naugarduko gatv\u0117s turgus",
-                "address_extra": "Naugarduko gatv\u0117, Vilnius, Vilnius City Municipality, Lithuania",
-                "address_details_level": "other",
-                "full_address": "Naugarduko gatv\u0117s turgus, Naugarduko gatv\u0117, Vilnius, Vilnius City Municipality, Lithuania",
-                "place_id": "google|ChIJj_19HMKV3UYRUtibE1lJPL4",
-                "image_identifier": "DEFAULT",
-                "place_type": "other",
-                "display_index": 2,
-                "meta": {
-                    "initial_selection_source": "google"
-                }
-            },
-            {
-                "source": "google",
-                "analytics_type": "Google Places",
-                "address_name": "Naugarduko g. 14 DNSB",
-                "address_extra": "Naugarduko gatv\u0117, Vilnius, Vilnius City Municipality, Lithuania",
-                "address_details_level": "other",
-                "full_address": "Naugarduko g. 14 DNSB, Naugarduko gatv\u0117, Vilnius, Vilnius City Municipality, Lithuania",
-                "place_id": "google|ChIJTf1mvWyU3UYR5N4x9tSsxBk",
-                "image_identifier": "DEFAULT",
-                "place_type": "other",
-                "display_index": 3,
-                "meta": {
-                    "initial_selection_source": "google"
-                }
-            },
-            {
-                "source": "google",
-                "analytics_type": "Google Address",
-                "address_name": "Naugarduko gatv\u0117",
-                "address_extra": "Marijampol\u0117, Marijampol\u0117 Municipality, Lithuania",
-                "address_details_level": "other",
-                "full_address": "Naugarduko gatv\u0117, Marijampol\u0117, Marijampol\u0117 Municipality, Lithuania",
-                "place_id": "google|EkVOYXVnYXJkdWtvIGdhdHbElywgTWFyaWphbXBvbMSXLCBNYXJpamFtcG9sxJcgTXVuaWNpcGFsaXR5LCBMaXRodWFuaWEiLiosChQKEgmL8lOt-CnhRhG20kqG5aEfrRIUChIJ46ppsIbR4EYRp8mwGQ_ys3E",
-                "image_identifier": "DEFAULT",
-                "place_type": "other",
-                "display_index": 4,
-                "meta": {
-                    "initial_selection_source": "google"
+                    "initial_selection_source": "internal"
                 }
             }
         ],
         "delivery_location_index": null,
-        "provider_image_url": "https://images.bolt.eu/store/2019/2019-09-20/67cef385-dee6-46f4-b9bc-d7f122ea1501.png",
+        "provider_image_url": "https://images.bolt.eu/store/2020/2020-02-07/d6efe36b-3d6b-4290-b687-bf2ac8378184.png",
         "address_sensitivity_threshold_in_meters": 100
     }
 }

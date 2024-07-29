@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 
 class userSelection(BaseModel):
-    userAdress: str
+    user_adress: str
     # wolt: bool
     # bolt: bool
 
@@ -14,3 +14,8 @@ class Restaurant(BaseModel):
     #image: image
     #priceRange: int
     #deliveryPrice: float
+
+class AdressSuggestion(BaseModel):
+    address_name: str
+    lat: str
+    lng: str
