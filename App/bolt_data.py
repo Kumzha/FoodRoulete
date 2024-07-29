@@ -1,9 +1,11 @@
 import requests
 import json
-from schemas import Restaurant, AdressSuggestion
+from schemas import Restaurant, addressSuggestion
 
 
-def getBoltRestaurants(latitude, longitude) -> list[Restaurant]:
+def getBoltRestaurants(address: str) -> list[Restaurant]:
+
+    first_selection = getSuggestionsBolt(address=address)
 
     headers = {
         'accept': '*/*',
@@ -23,8 +25,8 @@ def getBoltRestaurants(latitude, longitude) -> list[Restaurant]:
 
     #TODO need to gather city id info
     params = (
-        ('delivery_lat', {latitude}),
-        ('delivery_lng', {longitude}),
+        ('delivery_lat', {first_selection['lat']}),
+        ('delivery_lng', {first_selection['lng']}),
         ('city_id', '9'),
         ('version', 'FW.1.70'),
         ('language', 'en-US'),
@@ -41,38 +43,56 @@ def getBoltRestaurants(latitude, longitude) -> list[Restaurant]:
 
     restaurant_list = []
 
-    print(response_object['data']['providers'][0])
+    # print(response_object['data']['providers'][0]['delivery_price']['price_str'])
     
+
+    #TODO delivery price must be checked if outside Europe(euro)
     for provider in response_object['data']['providers']:
-        provider_id = provider['provider_id']
-        address = provider['address']
-        price_level_str = provider['price_level_str']
-        min_delivery_time = provider['min_delivery_eta']
-        max_delivery_time = provider['max_delivery_eta']
-        image = provider['images']['provider_list_v1']['aspect_ratio_map']['original']['1x']
-        tags = provider['tags']
-        
-        if provider['rating_info']["rating_value"] is None:
-              rating = provider['rating_info']["rating_value"]
-        else:
-            #TODO can play around with this
-            rating = '0.0'    
+
+        if provider['is_available'] == True:
+
+            if provider['rating_info'] is None or provider['rating_info']["rating_value"] is None:
+                #TODO can play around with this
+                rating = '0.0' 
+            else:
+                rating = provider['rating_info']["rating_value"]
+
+            restaurant = Restaurant(id=provider['provider_id'],
+                            name=provider['name']['value'],
+                            address=provider['address'],
+                            minimum_delivery_time=provider['min_delivery_eta'],
+                            maximum_delivery_time=provider['max_delivery_eta'],
+                            rating=rating,
+                            #price_level=provider['price_level_str'], 
+                            image=provider['images']['provider_list_v1']['aspect_ratio_map']['original']['1x'],
+                            tags=provider['tags'],
+                            delivery_price=provider['delivery_price']['price_str']
+                            )
+            
+            restaurant_list.append(restaurant)
+
+    # Writes all gathered info into a file
+    # file_path = 'textfiles/jsonfile.txt'
+    # with open(file_path, 'w', encoding='utf-8') as file:
+    #     file.write(response_string) 
 
 
-    # Write all suggestions to a text file to help find errors
-    file_path = 'textfiles/jsonfile.txt'
-    with open(file_path, 'w', encoding='utf-8') as file:
-        file.write(response_string)
+    # Writes all reduced info into a file
+    # restaurant_dicts = [restaurant.dict() for restaurant in restaurant_list]
+    # restaurant_string = json.dumps(restaurant_dicts, indent = 4)
+    # file_path = 'textfiles/bolt_providers.txt'
+    # with open(file_path, 'w', encoding='utf-8') as file:
+    #     file.write(restaurant_string)
+
+    return restaurant_list
 
 
 
 
+# If we are going to have auto-complete suggestions during typing of address, gona have to rewrite this in the front-end side of code
+def getSuggestionsBolt(address: str) -> addressSuggestion:
 
-
-# If we are going to have auto-complete suggestions during typing of adress, gona have to rewrite this in the front-end side of code
-def getSuggestionsBolt(adress: str) -> AdressSuggestion:
-
-    #Sends a request after the user inputs an adress into the adress_field and submits it, in order to get lat,lng values from bolt/wolt api
+    #Sends a request after the user inputs an address into the address_field and submits it, in order to get lat,lng values from bolt/wolt api
     headers = {
         'accept': '*/*',
         'accept-language': 'en-GB,en-US;q=0.9,en;q=0.8',
@@ -87,9 +107,9 @@ def getSuggestionsBolt(adress: str) -> AdressSuggestion:
         'sec-fetch-site': 'cross-site',
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36',
     }
-
+    #TODO implement lat, lng getter
     params = (
-        ('search_string', {adress}),
+        ('search_string', {address}),
         ('lng', '25.2816'),
         ('lat', '54.6912'),
         ('version', 'FW.1.70'),
@@ -108,9 +128,9 @@ def getSuggestionsBolt(adress: str) -> AdressSuggestion:
     
 
     # Write all suggestions to a text file to help find errors
-    file_path = 'textfiles/suggestions.txt'
-    with open(file_path, 'w', encoding='utf-8') as file:
-        file.write(response_string)
+    # file_path = 'textfiles/suggestions.txt'
+    # with open(file_path, 'w', encoding='utf-8') as file:
+    #     file.write(response_string)
 
 
     # Gathers infor from first suggestio
@@ -128,7 +148,3 @@ def getSuggestionsBolt(adress: str) -> AdressSuggestion:
     # print(first_selection)
     return first_selection
 
-
-first_selection = getSuggestionsBolt('Naugarduko gatve 3')
-print(first_selection['address_name'])
-getBoltRestaurants(first_selection['lat'], first_selection['lng']) 

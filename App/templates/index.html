@@ -93,7 +93,7 @@
         <h1>Kad rinktis maistą būtų lengviau!</h1>
         <p>Žaidimų būdu rinktis maistą yra smagiau ir greičiau</p>
         <div class="search-bar">
-            <input id="adress-field" type="text" placeholder="Enter your address...">
+            <input id="address-field" type="text" placeholder="Enter your address...">
         </div>
         <div class="buttons">
             <!-- <img src="wolt.png" alt="Wolt">
@@ -108,20 +108,23 @@
     <script>
         async function beginSearch(){
 
-            const adress = document.getElementById('adress-field').value;
-            const payload = {userAdress: adress};
+            const address = document.getElementById('address-field').value;
+            const payload = {user_address: address};
 
-            if(!adress){
+            if(!address){
                 throw new Error('Įveskite adresą!');
             }
 
-            console.log(typeof(adress));
+            console.log(typeof(address));
+            console.log(address);
 
-            const response = await fetch('/submitAdress', {
+            const response = await fetch('/submitAddress', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload)
             });
+
+            console.log("1")
 
             const data = await response.json();
             console.log(data);
