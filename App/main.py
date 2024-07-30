@@ -17,7 +17,7 @@ def index(request: Request):
     return templates.TemplateResponse('index.html', {'request': request})
 
 @app.post('/submitAddress', response_model=list[schemas.Restaurant])
-def postaddress(payload: schemas.userSelection):
+def postaddress(payload: schemas.UserSelection):
 
     #TODO implement address check
     address = payload.user_address

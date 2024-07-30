@@ -1,9 +1,10 @@
 import requests
 import json
-from schemas import Restaurant, addressSuggestion
+from utils import formatBoltDeliveryTime
+from schemas import BoltRestaurant, AddressSuggestion
 
 
-def getBoltRestaurants(address: str) -> list[Restaurant]:
+def getBoltRestaurants(address: str) -> list[BoltRestaurant]:
 
     first_selection = getSuggestionsBolt(address=address)
 
@@ -51,38 +52,36 @@ def getBoltRestaurants(address: str) -> list[Restaurant]:
 
         if provider['is_available'] == True:
 
-            if provider['rating_info'] is None or provider['rating_info']["rating_value"] is None:
-                #TODO can play around with this
-                rating = '0.0' 
-            else:
-                rating = provider['rating_info']["rating_value"]
+            # if provider['rating_info'] is None or provider['rating_info']["rating_value"] is None:
+            #     #TODO can play around with this
+            #     rating = '0.0' 
+            # else:
+            #     rating = provider['rating_info']["rating_value"]
 
-            restaurant = Restaurant(id=provider['provider_id'],
+            restaurant = BoltRestaurant(
+                            url="https://food.bolt.eu/lt-LT/9-vilnius/p/" + str(provider['provider_id']),
                             name=provider['name']['value'],
                             address=provider['address'],
-                            minimum_delivery_time=provider['min_delivery_eta'],
-                            maximum_delivery_time=provider['max_delivery_eta'],
-                            rating=rating,
-                            #price_level=provider['price_level_str'], 
+                            estimates_delivery_time=formatBoltDeliveryTime(provider['min_delivery_eta'],provider['max_delivery_eta']),
                             image=provider['images']['provider_list_v1']['aspect_ratio_map']['original']['1x'],
+                            #TODO implement tags/categories
                             tags=provider['tags'],
                             delivery_price=provider['delivery_price']['price_str']
                             )
             
             restaurant_list.append(restaurant)
-
+    
     # Writes all gathered info into a file
     # file_path = 'textfiles/jsonfile.txt'
     # with open(file_path, 'w', encoding='utf-8') as file:
     #     file.write(response_string) 
 
-
     # Writes all reduced info into a file
-    # restaurant_dicts = [restaurant.dict() for restaurant in restaurant_list]
-    # restaurant_string = json.dumps(restaurant_dicts, indent = 4)
-    # file_path = 'textfiles/bolt_providers.txt'
-    # with open(file_path, 'w', encoding='utf-8') as file:
-    #     file.write(restaurant_string)
+    restaurant_dicts = [restaurant.dict() for restaurant in restaurant_list]
+    restaurant_string = json.dumps(restaurant_dicts, indent = 4)
+    file_path = 'textfiles/bolt_providers.txt'
+    with open(file_path, 'w', encoding='utf-8') as file:
+        file.write(restaurant_string)
 
     return restaurant_list
 
@@ -90,7 +89,7 @@ def getBoltRestaurants(address: str) -> list[Restaurant]:
 
 
 # If we are going to have auto-complete suggestions during typing of address, gona have to rewrite this in the front-end side of code
-def getSuggestionsBolt(address: str) -> addressSuggestion:
+def getSuggestionsBolt(address: str) -> AddressSuggestion:
 
     #Sends a request after the user inputs an address into the address_field and submits it, in order to get lat,lng values from bolt/wolt api
     headers = {
@@ -147,4 +146,6 @@ def getSuggestionsBolt(address: str) -> addressSuggestion:
 
     # print(first_selection)
     return first_selection
+
+getBoltRestaurants("Pavasario gatve 30")
 

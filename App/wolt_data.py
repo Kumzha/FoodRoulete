@@ -1,10 +1,11 @@
 import requests
 import json
-from schemas import Restaurant, addressSuggestion
+from schemas import WoltRestaurant, AddressSuggestion
 from bolt_data import getSuggestionsBolt
+from utils import formatWoltDeliveryTime
 
 
-def getWoltRestaurants(address: str) -> list[Restaurant]:
+def getWoltRestaurants(address: str) -> list[WoltRestaurant]:
 
     first_selection = getSuggestionsBolt(address=address)
 
@@ -47,54 +48,22 @@ def getWoltRestaurants(address: str) -> list[Restaurant]:
         file.write(response_string) 
 
     restaurant_list = []
-
+    
     for provider in response_object['sections'][1]['items']:
-        if provider['online'] == True:
-            name = provider['title']
-            address = provider
 
+        if provider['venue']['delivers'] == True:
 
-            print(name)
-            # restaurant = Restaurant(id=provider['provider_id'],
-            #                     name=provider['title']['value'],
-            #                     address=provider['address'],
-            #                     minimum_delivery_time=provider['min_delivery_eta'],
-            #                     maximum_delivery_time=provider['max_delivery_eta'],
-            #                     rating=rating,
-            #                     #price_level=provider['price_level_str'], 
-            #                     image=provider['images']['provider_list_v1']['aspect_ratio_map']['original']['1x'],
-            #                     tags=provider['tags'],
-            #                     delivery_price=provider['delivery_price']['price_str']
-            #                     )
-
-            # restaurant_list.append(restaurant)
-
-    print(response_object['sections'][1]['items'][1])
-
-#     #TODO delivery price must be checked if outside Europe(euro)
-#     for provider in response_object['data']['providers']:
-
-#         if provider['is_available'] == True:
-
-#             if provider['rating_info'] is None or provider['rating_info']["rating_value"] is None:
-#                 #TODO can play around with this
-#                 rating = '0.0' 
-#             else:
-#                 rating = provider['rating_info']["rating_value"]
-
-#             restaurant = Restaurant(id=provider['provider_id'],
-#                             name=provider['name']['value'],
-#                             address=provider['address'],
-#                             minimum_delivery_time=provider['min_delivery_eta'],
-#                             maximum_delivery_time=provider['max_delivery_eta'],
-#                             rating=rating,
-#                             #price_level=provider['price_level_str'], 
-#                             image=provider['images']['provider_list_v1']['aspect_ratio_map']['original']['1x'],
-#                             tags=provider['tags'],
-#                             delivery_price=provider['delivery_price']['price_str']
-#                             )
-            
-#             restaurant_list.append(restaurant)
+            restaurant = WoltRestaurant(
+                    url = provider['link']['target'],
+                    name=provider['title'],
+                    adress=provider['venue']['address'],
+                    estimated_delivery_time=formatWoltDeliveryTime(provider['venue']['estimate_range']),
+                    tags=provider['filtering']['filters'][0]['values'],
+                    image=provider['image']['url'],
+                    #TODO delivery price, for regular users
+                    delivery_price='0'
+                                        )
+            restaurant_list.append(restaurant)
 
 #     # Writes all gathered info into a file
 #     # file_path = 'textfiles/jsonfile.txt'
@@ -102,17 +71,14 @@ def getWoltRestaurants(address: str) -> list[Restaurant]:
 #     #     file.write(response_string) 
 
 
-#     # Writes all reduced info into a file
-#     # restaurant_dicts = [restaurant.dict() for restaurant in restaurant_list]
-#     # restaurant_string = json.dumps(restaurant_dicts, indent = 4)
-#     # file_path = 'textfiles/providers.txt'
-#     # with open(file_path, 'w', encoding='utf-8') as file:
-#     #     file.write(restaurant_string)
+    # Writes all reduced info into a file
+    restaurant_dicts = [restaurant.dict() for restaurant in restaurant_list]
+    restaurant_string = json.dumps(restaurant_dicts, indent = 4)
+    file_path = 'textfiles/wolt_providers.txt'
+    with open(file_path, 'w', encoding='utf-8') as file:
+        file.write(restaurant_string)
 
-#     return restaurant_list
+    return restaurant_list
 
 
-
-# getSuggestionsWolt('Pavasario gatve 30')
-# restaurant_list = getBoltRestaurants('Naugarduko gatve') 
-getWoltRestaurants("Pavasario gatve 30")
+restaurant_list = getWoltRestaurants("Pavasario gatve 30")

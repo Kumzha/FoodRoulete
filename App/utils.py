@@ -1,15 +1,19 @@
 # from scrapper import WoltScrapper, BoltScrapper
 import schemas, crud
-from scrapper import scrapeBolt
 from sqlalchemy.orm import Session
 
-def generateRestaurants(payload: schemas.userSelection, db: Session) -> list[schemas.Restaurant]:
+def generateRestaurants(payload: schemas.UserSelection, db: Session) -> list[schemas.Restaurant]:
     print(payload.useraddress)
     
     #TODO implement wolt/bolt check
 
-    restaurants = scrapeBolt(payload.useraddress)
+def formatBoltDeliveryTime(min: int, max: int) -> str:
+    min_minutes = int(min/60)
+    max_minutes = int(max/60)
+    return f"{min_minutes}-{max_minutes} min"
 
-    print(restaurants)
+def formatWoltDeliveryTime(est_time: str) -> str:
+    return est_time + ' min'
 
-    return restaurants
+def formatBoltRating(rating: str) -> str:
+    return 

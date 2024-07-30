@@ -1,25 +1,36 @@
 from pydantic import BaseModel
 
-class userSelection(BaseModel):
+class UserSelection(BaseModel):
     user_address: str
     # wolt: bool
     # bolt: bool
 
-class Restaurant(BaseModel):
+class WoltRestaurant(BaseModel):
+    url: str
+    name: str
+    adress: str
+    estimated_delivery_time: str
+    tags: list
+    image: str
+    delivery_price: str
 
-    id: int
+class BoltRestaurant(BaseModel):
+    url: str
     name: str
     address: str
-    minimum_delivery_time: int
-    maximum_delivery_time: int
-    rating: float
-    price_level: str
+    estimates_delivery_time: str
     image: str
     tags: list
     delivery_price: str
 
+class Restaurant(BaseModel):
+    has_bolt: bool
+    has_wolt: bool
 
-class addressSuggestion(BaseModel):
+    bolt_info: BoltRestaurant
+    wolt_info: WoltRestaurant
+
+class AddressSuggestion(BaseModel):
     address_name: str
     lat: str
     lng: str
