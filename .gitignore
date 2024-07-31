@@ -2,6 +2,9 @@
 .env
 __pycache__
 .vscode
+.next
+
+
 # dependencies
 /node_modules
 /.pnp
