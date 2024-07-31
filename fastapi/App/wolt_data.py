@@ -2,8 +2,10 @@ import requests
 import json
 from schemas import WoltRestaurant, AddressSuggestion
 from bolt_data import getSuggestionsBolt
-from utils import formatWoltDeliveryTime
 
+
+def formatWoltDeliveryTime(est_time: str) -> str:
+    return est_time + ' min'
 
 def getWoltRestaurants(address: str) -> list[WoltRestaurant]:
 
@@ -43,9 +45,9 @@ def getWoltRestaurants(address: str) -> list[WoltRestaurant]:
     response_object = response.json()
     response_string = json.dumps(response_object, indent = 4)
 
-    file_path = 'textfiles/wolt_providers.txt'
-    with open(file_path, 'w', encoding='utf-8') as file:
-        file.write(response_string) 
+    # file_path = 'textfiles/wolt_providers.txt'
+    # with open(file_path, 'w', encoding='utf-8') as file:
+    #     file.write(response_string) 
 
     restaurant_list = []
     
@@ -72,11 +74,11 @@ def getWoltRestaurants(address: str) -> list[WoltRestaurant]:
 
 
     # Writes all reduced info into a file
-    restaurant_dicts = [restaurant.dict() for restaurant in restaurant_list]
-    restaurant_string = json.dumps(restaurant_dicts, indent = 4)
-    file_path = 'textfiles/wolt_providers.txt'
-    with open(file_path, 'w', encoding='utf-8') as file:
-        file.write(restaurant_string)
+    # restaurant_dicts = [restaurant.dict() for restaurant in restaurant_list]
+    # restaurant_string = json.dumps(restaurant_dicts, indent = 4)
+    # file_path = 'textfiles/wolt_providers.txt'
+    # with open(file_path, 'w', encoding='utf-8') as file:
+    #     file.write(restaurant_string)
 
     return restaurant_list
 

@@ -24,6 +24,7 @@ class BoltRestaurant(BaseModel):
     delivery_price: str
 
 class Restaurant(BaseModel):
+    name: str
     has_bolt: bool
     has_wolt: bool
 
@@ -34,3 +35,7 @@ class AddressSuggestion(BaseModel):
     address_name: str
     lat: str
     lng: str
+
+class RestaurantsResponseModel(BaseModel):
+    bolt_restaurants: list[BoltRestaurant]
+    wolt_restaurants: list[WoltRestaurant]

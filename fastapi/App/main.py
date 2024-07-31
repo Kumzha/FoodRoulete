@@ -5,7 +5,7 @@ from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
 from starlette.requests import Request
-from bolt_data import getBoltRestaurants
+from utils import getRestaurantList
 
 
 app = FastAPI()
@@ -16,12 +16,13 @@ templates = Jinja2Templates(directory="templates")
 def index(request: Request):
     return templates.TemplateResponse('index.html', {'request': request})
 
-@app.post('/submitAddress', response_model=list[schemas.Restaurant])
+@app.post('/submitAddress', response_model=schemas.RestaurantsResponseModel)
 def postaddress(payload: schemas.UserSelection):
 
-    #TODO implement address check
+    #TODO implement address check and formating
     address = payload.user_address
 
 
-    restaurants_list = getBoltRestaurants(address=address)
+    restaurants_list = getRestaurantList(address)
+    print(type(restaurants_list))
     return restaurants_list
