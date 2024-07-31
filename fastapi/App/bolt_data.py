@@ -76,11 +76,13 @@ def getBoltRestaurants(address: str) -> list[BoltRestaurant]:
             restaurant_list.append(restaurant)
     
     # Writes all gathered info into a file
-    file_path = 'textfiles/json_file.txt'
-    with open(file_path, 'w', encoding='utf-8') as file:
-        file.write(response_string) 
+
+    # file_path = 'textfiles/json_file.txt'
+    # with open(file_path, 'w', encoding='utf-8') as file:
+    #     file.write(response_string) 
 
     # Writes all reduced info into a file
+
     # restaurant_dicts = [restaurant.dict() for restaurant in restaurant_list]
     # restaurant_string = json.dumps(restaurant_dicts, indent = 4)
     # file_path = 'textfiles/bolt_providers.txt'
@@ -151,5 +153,5 @@ def getSuggestionsBolt(address: str) -> AddressSuggestion:
     # print(first_selection)
     return first_selection
 
-getBoltRestaurants("Pavasario gatve 30")
+# getBoltRestaurants("Pavasario gatve 30")
 
