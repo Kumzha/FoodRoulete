@@ -1,3 +1,4 @@
+import AutoComplete from "@/components/AutoComplete";
 import ProviderSelection from "@/components/ProviderSelection";
 import SearchBar from "@/components/SearchBar";
 export default function Page() {
@@ -9,7 +10,7 @@ export default function Page() {
             <h1 className="text-6xl w-3/4 font-bold" >Choose food faster!</h1>
             <h2 className="text-3xl">It's easier to choose food while playing games</h2>
             <div className="mt-24 ">
-              <SearchBar/>
+              <AutoComplete/>
               <div className="flex mt-5">
                 <ProviderSelection provider="bolt"/>
                 <ProviderSelection provider="wolt"/>
