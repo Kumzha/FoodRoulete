@@ -1,14 +1,12 @@
-import AutoComplete from "@/components/AutoComplete";
 import ProviderSelection from "@/components/ProviderSelection";
+import AutoComplete from "@/components/AutoComplete";
 export default function Page() {
-
-
 
 
   return <div className="pl-6 max-w-6xl mx-auto grid grid-cols-1 gap-5 mt-32">
             <h1 className="text-6xl w-3/4 font-bold" >Choose food faster!</h1>
             <h2 className="text-3xl">It's easier to choose food while playing games</h2>
-            <div className="mt-40 ">
+            <div className="mt-24 ">
               <AutoComplete/>
               <div className="flex mt-5">
                 <ProviderSelection provider="bolt"/>

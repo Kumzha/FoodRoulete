@@ -1,5 +1,5 @@
-"use client"
-import React, { useState } from 'react'
+"use clientside"
+import React from 'react'
 import { IoSearchSharp } from "react-icons/io5";
 
 export default function SearchBar() {
