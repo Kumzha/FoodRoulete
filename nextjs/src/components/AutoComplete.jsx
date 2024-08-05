@@ -52,9 +52,11 @@ export default function AutoComplete() {
 
   return (
     <form className="">
-        <div className='ml-10 w-1/2 p-1 pl-5 border-zinc-800 border-2 rounded-lg'>
-            <IoSearchSharp className='inline'/>
-            <input ref = {placeAutoCompleteRef} type="text" className="w-10/12 p-1 ml-5" placeholder='Enter your address: ' style={inputStyle}/>
+        <div className='flex ml-10 w-1/2 p-1 pl-5 border-zinc-800 border-2 rounded-lg'>
+            <div className="flex items-center justify-center">
+            <IoSearchSharp/>
+            </div>
+            <input ref = {placeAutoCompleteRef} type="text" className="w-11/12 p-1 ml-5" placeholder='Enter your address: ' style={inputStyle}/>
         </div>
     </form>
 
