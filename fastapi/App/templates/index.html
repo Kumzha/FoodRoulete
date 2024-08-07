@@ -115,16 +115,11 @@
                 throw new Error('Įveskite adresą!');
             }
 
-            console.log(typeof(address));
-            console.log(address);
-
             const response = await fetch('/submitAddress', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload)
             });
-
-            console.log("1")
 
             const data = await response.json();
             console.log(data);

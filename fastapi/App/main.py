@@ -6,9 +6,24 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
 from starlette.requests import Request
 from utils import getRestaurantList
+from fastapi.middleware.cors import CORSMiddleware
+
 
 
 app = FastAPI()
+
+origins = [
+    "http://localhost:3000",
+    # You can add more origins here
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 templates = Jinja2Templates(directory="templates")
 
@@ -26,3 +41,7 @@ def postaddress(payload: schemas.UserSelection):
     restaurants_list = getRestaurantList(address)
     print(type(restaurants_list))
     return restaurants_list
+
+@app.get('/test')
+def test():
+    return "test"

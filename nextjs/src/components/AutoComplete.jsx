@@ -6,7 +6,8 @@ import { IoSearchSharp } from "react-icons/io5";
 
 const libs = ["places"];
 
-export default function AutoComplete() {
+
+export default function AutoComplete( props ) {
 
     const inputStyle = {
         outline: 'none',
@@ -20,9 +21,8 @@ export default function AutoComplete() {
         libraries: libs
     });
 
+
     //limit boundaries for autocomplet
-
-
     const placeAutoCompleteRef = useRef(null);
 
     useEffect(() => {
@@ -45,10 +45,10 @@ export default function AutoComplete() {
         if(autoComplete){
             autoComplete.addListener('place_changed', () =>{
                 const place = autoComplete.getPlace()
-                console.log(place)
+                props.addressHandler(place)
             })
         }
-    }, [autoComplete])
+    }, [autoComplete, props])
 
   return (
     <form className="">

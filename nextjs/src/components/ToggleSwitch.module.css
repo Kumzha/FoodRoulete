@@ -24,3 +24,8 @@
 .on {
   transform: translateX(25px);
 }
+
+.bgOn{
+  /* TODO color*/
+  background-color: lightgreen;
+}
