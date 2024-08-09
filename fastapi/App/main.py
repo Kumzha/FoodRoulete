@@ -35,10 +35,16 @@ def index(request: Request):
 def postaddress(payload: schemas.UserSelection):
 
     #TODO implement address check and formating
-    address = payload.user_address
+
+    lat = payload.lat
+    lng = payload.lng
+    wolt = payload.wolt
+    bolt = payload.bolt
+    
+    print(lat, lng, wolt, bolt)
 
 
-    restaurants_list = getRestaurantList(address)
+    restaurants_list = getRestaurantList(lat, lng, wolt, bolt)
     print(type(restaurants_list))
     return restaurants_list
 

@@ -5,20 +5,21 @@ import { useRouter } from 'next/navigation';
 import { useCallback, useContext } from 'react';
 import { SearchContext } from '@/context/SearchContext';
 
-const StartButton = () => {
+const StartButton = ( props ) => {
 
   const router = useRouter();
   const { setData, data: contextData } = useContext(SearchContext);
   const data = { id: 5, name: 'Example' };
+  const uiState = props.state;
 
     const clickHandler = useCallback(async (e) => {
       e.preventDefault();
-      router.push(`/roulette`,)
+      setData(uiState);
+
+      console.log(uiState);
+      router.push(`/roulette`)
     })
 
-    const handleClick = () => {
-      setData(data);
-    }
 
 
   return (
@@ -27,7 +28,6 @@ const StartButton = () => {
         className="bg-gray-500 text-white px-5 py-2 mx-auto rounded-md" 
         onClick={clickHandler}
         >Start</button>
-        <button onClick={handleClick}>test</button>
     </div>
   )
 }

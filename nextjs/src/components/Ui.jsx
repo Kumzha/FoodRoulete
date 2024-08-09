@@ -54,8 +54,7 @@ export class Ui extends Component {
                         <ProviderSelection provider="wolt" isOnHandler={this.setWolt}/>
                     </div>
                 </div>
-                <StartButton/>
-                {/* <button onClick={() => console.log(this.state)}>check</button> */}
+                <StartButton state={this.state}/>
             </div>  
      )
   }

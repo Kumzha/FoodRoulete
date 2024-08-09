@@ -1,9 +1,10 @@
 from pydantic import BaseModel
 
 class UserSelection(BaseModel):
-    user_address: str
-    # wolt: bool
-    # bolt: bool
+    lat: float
+    lng: float
+    wolt: bool
+    bolt: bool
 
 class WoltRestaurant(BaseModel):
     url: str

@@ -9,10 +9,17 @@ def formatBoltRating(rating: str) -> str:
 def mergeLists(bolt_list: list[schemas.BoltRestaurant],wolt_list: list[schemas.WoltRestaurant]) -> list[schemas.Restaurant]:
     return list[schemas.Restaurant]
 
-def getRestaurantList(adress: str) -> schemas.RestaurantsResponseModel:
+def getRestaurantList(lat: float, lng: float, wolt: bool, bolt: bool) -> schemas.RestaurantsResponseModel:
 
-    bolt_restaurants = getBoltRestaurants(adress)
-    wolt_restaurants = getWoltRestaurants(adress)
+    bolt_restaurants = []
+    wolt_restaurants = []
+
+    if(wolt == True):
+        wolt_restaurants = getWoltRestaurants(lat, lng)
+    
+    if(bolt == True):
+        bolt_restaurants = getBoltRestaurants(lat, lng)
+    
 
     restaurants_dict = schemas.RestaurantsResponseModel(bolt_restaurants=bolt_restaurants, wolt_restaurants=wolt_restaurants)
 

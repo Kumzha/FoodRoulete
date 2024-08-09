@@ -7,9 +7,7 @@ from bolt_data import getSuggestionsBolt
 def formatWoltDeliveryTime(est_time: str) -> str:
     return est_time + ' min'
 
-def getWoltRestaurants(address: str) -> list[WoltRestaurant]:
-
-    first_selection = getSuggestionsBolt(address=address)
+def getWoltRestaurants(lat: float, lng: float) -> list[WoltRestaurant]:
 
     import requests
 
@@ -36,8 +34,8 @@ def getWoltRestaurants(address: str) -> list[WoltRestaurant]:
     }
 
     params = (
-        ('lat', first_selection['lat']),
-        ('lon', first_selection['lng']),
+        ('lat', lat),
+        ('lon', lng),
     )
 
     response = requests.get('https://consumer-api.wolt.com/v1/pages/restaurants', headers=headers, params=params)
@@ -82,5 +80,5 @@ def getWoltRestaurants(address: str) -> list[WoltRestaurant]:
 
     return restaurant_list
 
-
-restaurant_list = getWoltRestaurants("Pavasario gatve 30")
+# wolt_restaurants = getWoltRestaurants(54.7797, 25.0926)
+# 54.7797369 25.0926369
