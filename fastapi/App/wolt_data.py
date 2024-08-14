@@ -1,7 +1,6 @@
 import requests
 import json
 from schemas import WoltRestaurant, AddressSuggestion
-from bolt_data import getSuggestionsBolt
 
 
 def formatWoltDeliveryTime(est_time: str) -> str:

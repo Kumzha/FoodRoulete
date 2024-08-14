@@ -14,6 +14,7 @@ app = FastAPI()
 
 origins = [
     "http://localhost:3000",
+    "http://localhost:3000/roulette",
     # You can add more origins here
 ]
 
