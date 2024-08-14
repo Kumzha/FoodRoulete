@@ -102,11 +102,11 @@ const RoulettePage = () => {
 
   return (
     <div>
-      <h1>Fetched Data</h1>
-      <pre>{JSON.stringify(pageData, null, 2)}</pre>
       <button onClick={() => {checkContextState()}}>check state</button>
       <FoodComponent provider="wolt" deliveryInfo={WoltDeliveryInfo}/>
       <FoodComponent provider="bolt" deliveryInfo={BoltDeliveryInfo}/>
+      <h1>Fetched Data</h1>
+      <pre>{JSON.stringify(pageData, null, 2)}</pre>
     </div>
   );
 };
