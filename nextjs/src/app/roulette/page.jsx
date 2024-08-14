@@ -2,8 +2,35 @@
 import { useState, useContext, useEffect } from 'react';
 import { SearchContext } from '@/context/SearchContext';
 import ClipLoader from "react-spinners/ClipLoader";
+import FoodComponent from '@/components/FoodComponent';
 
 const RoulettePage = () => {
+
+   const BoltProviderTest = {
+    url: "https://food.bolt.eu/lt-LT/9-vilnius/p/1409",
+    name: "McDonald’s® (Panorama)",
+    address: "Saltoniškių gatvė 9, Vilnius",
+    estimated_delivery_time: "10-15 min",
+    image: "https://images.bolt.eu/store/2023/2023-04-26/3d5286fe-f08b-4972-a48e-0bb554614285.jpeg",
+    tags: [],
+    delivery_price: "1,20 €"
+  }
+
+  const WoltProviderTest = {
+    url: "https://wolt.com/en/ltu/vilnius/restaurant/pomodoro-p-luksio-g",
+    name: "Pomodoro (P. Lukšio g.)",
+    adress: "Lukšio g. 32",
+    estimated_delivery_time: "30-40 min",
+    tags: [
+      "soup",
+      "pizza",
+      "dessert",
+      "salad",
+      "fish"
+    ],
+    image: "https://prod-wolt-venue-images-cdn.wolt.com/5e71d851a61d55abea46482a/781712f4-894e-11ea-8a50-0a58646c2a0c_1.jpg",
+    delivery_price: "0"
+  }
 
   const checkContextState = () => {
     console.log(data)
@@ -63,10 +90,16 @@ const RoulettePage = () => {
             </div>
   }
 
+  
   if (error) {
     return  <div>
               <div>Error: {error.message}</div>
+              {/* FOR DEBBUG */}
               <button onClick={() => {checkContextState()}}>check state</button>
+              <div className='flex'>
+                <FoodComponent provider="bolt" deliveryInfo = {BoltProviderTest}/>
+                <FoodComponent provider="wolt" deliveryInfo = {WoltProviderTest}/>
+              </div>
             </div>;
   }
 
@@ -75,6 +108,11 @@ const RoulettePage = () => {
       <h1>Fetched Data</h1>
       <pre>{JSON.stringify(pageData, null, 2)}</pre>
       <button onClick={() => {checkContextState()}}>check state</button>
+      <div className='flex'>
+        <FoodComponent provider="bolt" deliveryInfo = {BoltProviderTest}/>
+        <FoodComponent provider="wolt" deliveryInfo = {WoltProviderTest}/>
+      </div>
+      
     </div>
   );
 };

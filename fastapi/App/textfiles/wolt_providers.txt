@@ -1,0 +1,381 @@
+[
+    {
+        "url": "https://wolt.com/en/ltu/vilnius/restaurant/azerai",
+        "name": "Azerai (Jeruzal\u0117s g.)",
+        "adress": "Jeruzal\u0117s g. 21",
+        "estimated_delivery_time": "30-40 min",
+        "tags": [
+            "azerbaijani",
+            "mediterranean",
+            "falafel",
+            "vegetarian",
+            "kebab",
+            "turkish"
+        ],
+        "image": "https://prod-wolt-venue-images-cdn.wolt.com/61f18b4836ffb54736ff8f12/15ccd820-be7b-11ee-b05f-1ec50433c2fe_azerai.png",
+        "delivery_price": "0"
+    },
+    {
+        "url": "https://wolt.com/en/ltu/vilnius/restaurant/sushi-express-dangerucio-g",
+        "name": "Sushi Express (Dangeru\u010dio g.)",
+        "adress": "Dangeru\u010dio g. 1",
+        "estimated_delivery_time": "35-45 min",
+        "tags": [
+            "noodles",
+            "lunch",
+            "asian",
+            "sushi",
+            "vegetarian",
+            "healthy",
+            "vegan",
+            "japanese"
+        ],
+        "image": "https://prod-wolt-venue-images-cdn.wolt.com/65770d7f9c450f1c4c013f77/ebc58c98-9828-11ee-87b4-96cd72f0807f_bc1fe07a_b30a_11eb_9a15_aa44a2872207_22d7aae8_f9d7_11ea_bb6b_6a7f3657e7aa_ivaizdine_1000x600.jpeg",
+        "delivery_price": "0"
+    },
+    {
+        "url": "https://wolt.com/en/ltu/vilnius/restaurant/pizzamax-dangerucio-g",
+        "name": "Pizzamax (Dangeru\u010dio g.)",
+        "adress": "Dangeru\u010dio g. 1",
+        "estimated_delivery_time": "35-45 min",
+        "tags": [
+            "burgers",
+            "pasta",
+            "pizza",
+            "italian"
+        ],
+        "image": "https://prod-wolt-venue-images-cdn.wolt.com/646df3d2205e12cb338abac2/bd52bf26-fa25-11ed-8d6f-22592223c894_73a896d8_4848_11ec_badf_3a7a0c499c1c_19bdba71e0c9a8e64b1e6bd4a3ec82ee.png",
+        "delivery_price": "0"
+    },
+    {
+        "url": "https://wolt.com/en/ltu/vilnius/restaurant/ilunch-mokslininku-g",
+        "name": "iLunch (Mokslinink\u0173 g.)",
+        "adress": "Mokslinink\u0173 g. 6A",
+        "estimated_delivery_time": "20-30 min",
+        "tags": [
+            "salad",
+            "healthy",
+            "lunch",
+            "soup"
+        ],
+        "image": "https://prod-wolt-venue-images-cdn.wolt.com/64fae5cd1ec293219f242d7c/4def4752-bf47-11ee-8458-aebcd39973ba_ilunch__1_.png",
+        "delivery_price": "0"
+    },
+    {
+        "url": "https://wolt.com/en/ltu/vilnius/restaurant/kinu-perlas-cup",
+        "name": "Kin\u0173 perlas",
+        "adress": "Jeruzal\u0117s g. 29",
+        "estimated_delivery_time": "40-50 min",
+        "tags": [
+            "asian",
+            "chinese"
+        ],
+        "image": "https://prod-wolt-venue-images-cdn.wolt.com/5edf469550297699f1049663/9b14aa4c-a637-11ed-87ad-ba487aaeacef_a42cbf66_9af8_11ec_bbde_6e4ada4a9c7a_1.noodle_city_list_2.jpg",
+        "delivery_price": "0"
+    },
+    {
+        "url": "https://wolt.com/en/ltu/vilnius/restaurant/pizza-express-santaros-g",
+        "name": "Pizza Express (Santaros g.)",
+        "adress": "Santaros g. 5",
+        "estimated_delivery_time": "35-45 min",
+        "tags": [
+            "pizza",
+            "italian"
+        ],
+        "image": "https://prod-wolt-venue-images-cdn.wolt.com/66275d092b85504b0e59938d/8699c7d2-013f-11ef-b953-ce38994784f4_6e19df6c_e60d_11eb_a540_66bc07f91a7d_express_pizza_extra_list_7__1_.jpg",
+        "delivery_price": "0"
+    },
+    {
+        "url": "https://wolt.com/en/ltu/vilnius/restaurant/jammi-ateities-g",
+        "name": "Jammi (Ateities g.)",
+        "adress": "Ateities g. 10",
+        "estimated_delivery_time": "35-45 min",
+        "tags": [
+            "kebab",
+            "vegetarian",
+            "burgers",
+            "sandwich"
+        ],
+        "image": "https://prod-wolt-venue-images-cdn.wolt.com/61f90ca149aac6087caf22da/9596341e-8379-11ec-bce4-66a8b960fbba_a6cc6932_7218_11ec_b7d7_aa593002dd3c_5f0f6e5a_7218_11ec_afdf_967028269a59_jammi_kebabai_group__1___2___1___1_.jpg",
+        "delivery_price": "0"
+    },
+    {
+        "url": "https://wolt.com/en/ltu/vilnius/restaurant/shakesnack-sushi-didzioji-riese",
+        "name": "SHAKEsnack sushi (Did\u017eioji Rie\u0161\u0117)",
+        "adress": "Mol\u0117t\u0173 g. 13, Did\u017eioji Rie\u0161\u0117",
+        "estimated_delivery_time": "30-40 min",
+        "tags": [
+            "japanese",
+            "asian",
+            "sushi"
+        ],
+        "image": "https://prod-wolt-venue-images-cdn.wolt.com/63ac0284cee65731a79c7901/74a01f2e-868c-11ed-8468-f65380b12288_shakesnack.jpeg",
+        "delivery_price": "0"
+    },
+    {
+        "url": "https://wolt.com/en/ltu/vilnius/restaurant/home-pica",
+        "name": "HOME pica",
+        "adress": "Mol\u0117t\u0173 g. 13, Did\u017eioji Rie\u0161\u0117",
+        "estimated_delivery_time": "30-40 min",
+        "tags": [
+            "vegetarian",
+            "pizza",
+            "italian"
+        ],
+        "image": "https://prod-wolt-venue-images-cdn.wolt.com/5bd6f901dde35c000b14eb1f/4f56665c-7f79-11ed-8675-ea52937eeb6b_home_pizza_list_2.jpg",
+        "delivery_price": "0"
+    },
+    {
+        "url": "https://wolt.com/en/ltu/vilnius/restaurant/snatch-pizza-snacks-mokslininku-g",
+        "name": "Snatch - Pizza & Snacks (Mokslinink\u0173 g.)",
+        "adress": "Mokslinink\u0173 g. 6A",
+        "estimated_delivery_time": "40-50 min",
+        "tags": [
+            "mediterranean",
+            "lunch",
+            "bbq",
+            "italian",
+            "american",
+            "pizza"
+        ],
+        "image": "https://prod-wolt-venue-images-cdn.wolt.com/611a76a74bb6f4f7d0cb3390/c48880ba-002f-11ec-93d1-b21db2ab8120_snatch_group.jpg",
+        "delivery_price": "0"
+    },
+    {
+        "url": "https://wolt.com/en/ltu/vilnius/restaurant/kinu-smukle-moletu-pl",
+        "name": "Kin\u0173 smukl\u0117 (Mol\u0117t\u0173 pl.)",
+        "adress": "Mol\u0117t\u0173 g. 13",
+        "estimated_delivery_time": "25-35 min",
+        "tags": [
+            "asian",
+            "chinese"
+        ],
+        "image": "https://prod-wolt-venue-images-cdn.wolt.com/5dad9bcd7cabaa4167b140ab/681581b8d874a046be8d2ec0b0aa7e17",
+        "delivery_price": "0"
+    },
+    {
+        "url": "https://wolt.com/en/ltu/vilnius/restaurant/cili-pizza-jeruzales-g",
+        "name": "\u010cili pizza (Jeruzal\u0117s g.)",
+        "adress": "Jeruzal\u0117s g. 4",
+        "estimated_delivery_time": "40-50 min",
+        "tags": [
+            "lithuanian",
+            "lunch",
+            "salad",
+            "soup",
+            "pizza"
+        ],
+        "image": "https://imageproxy.wolt.com/mes-image/473b21dc-0e94-4220-9a10-93572aeb342d/eaceb601-7429-47e2-816c-f920d0b959da",
+        "delivery_price": "0"
+    },
+    {
+        "url": "https://wolt.com/en/ltu/vilnius/restaurant/burger-street-moletu-pl",
+        "name": "Burger Street (Mol\u0117t\u0173 pl.)",
+        "adress": "Mol\u0117t\u0173 pl. 47",
+        "estimated_delivery_time": "35-45 min",
+        "tags": [
+            "american",
+            "burgers",
+            "steak"
+        ],
+        "image": "https://prod-wolt-venue-images-cdn.wolt.com/5dada240789f7ed522e94147/229832a8-ba22-11eb-93d1-9e506323658a_burlist.jpeg",
+        "delivery_price": "0"
+    },
+    {
+        "url": "https://wolt.com/en/ltu/vilnius/restaurant/crisperia-santaros-g",
+        "name": "Crisperia (Santaros g.)",
+        "adress": "Santaros g. 5 ",
+        "estimated_delivery_time": "35-45 min",
+        "tags": [
+            "salad",
+            "burgers",
+            "mexican",
+            "sandwich"
+        ],
+        "image": "https://prod-wolt-venue-images-cdn.wolt.com/66275c6e952f776231004f00/72711dc2-0140-11ef-b07d-be5e99e601d2_c2702fca_950c_11ee_babf_82314f1d40ea_pizza_express_crisperia_list_3.jpg",
+        "delivery_price": "0"
+    },
+    {
+        "url": "https://wolt.com/en/ltu/vilnius/restaurant/sushi-out-jeruzales-g",
+        "name": "Sushi Out (Jeruzal\u0117s g.)",
+        "adress": "Jeruzal\u0117s g. 4",
+        "estimated_delivery_time": "40-50 min",
+        "tags": [
+            "japanese",
+            "lunch",
+            "asian",
+            "sushi"
+        ],
+        "image": "https://prod-wolt-venue-images-cdn.wolt.com/5ce27a6495b8b9923f840054/60eced3e-7c97-11ee-a0ad-fe7e1b8bd1bb_naujas_virs_elis.jpg",
+        "delivery_price": "0"
+    },
+    {
+        "url": "https://wolt.com/en/ltu/vilnius/restaurant/bee-happy-bajorai",
+        "name": "BEe Happy (Bajorai)",
+        "adress": "Bajor\u0173 kelias 4",
+        "estimated_delivery_time": "40-50 min",
+        "tags": [
+            "salad",
+            "pizza",
+            "italian"
+        ],
+        "image": "https://prod-wolt-venue-images-cdn.wolt.com/6132210b44e0a5cc393925f7/efd1f0fa-2125-11ec-b21f-9e42e294bbf9_2.beehappy_listone_2.jpg",
+        "delivery_price": "0"
+    },
+    {
+        "url": "https://wolt.com/en/ltu/vilnius/restaurant/bajoru-kioskas",
+        "name": "Bajor\u0173 kioskas",
+        "adress": "J.Kairi\u016bk\u0161\u010dio g. 14, Vilnius",
+        "estimated_delivery_time": "30-40 min",
+        "tags": [
+            "turkish",
+            "kebab"
+        ],
+        "image": "https://prod-wolt-venue-images-cdn.wolt.com/65c35a6eddddac5bc788fe56/ebba97cc-cf1c-11ee-9ae8-52deb7beeb53_bajoru_kioskas_list_1.jpg",
+        "delivery_price": "0"
+    },
+    {
+        "url": "https://wolt.com/en/ltu/vilnius/restaurant/pica-plius",
+        "name": "Pica+",
+        "adress": "\u017dali\u0173j\u0173 E\u017eer\u0173 g. 3A",
+        "estimated_delivery_time": "30-40 min",
+        "tags": [
+            "burgers",
+            "pizza",
+            "italian"
+        ],
+        "image": "https://prod-wolt-venue-images-cdn.wolt.com/5d5abff22508716882a93fa1/5dea6911724eaec179a503ee8c2edef3-edits/87c0895a4fcd1f09e148584c3282ad4c",
+        "delivery_price": "0"
+    },
+    {
+        "url": "https://wolt.com/en/ltu/vilnius/restaurant/caffeine-moletu-pl",
+        "name": "Caffeine (Mol\u0117t\u0173 pl.)",
+        "adress": "Mol\u0117t\u0173 pl. 8",
+        "estimated_delivery_time": "30-40 min",
+        "tags": [
+            "salad",
+            "breakfast",
+            "sandwich",
+            "cafe"
+        ],
+        "image": "https://prod-wolt-venue-images-cdn.wolt.com/64f9ca12a885fda8624a3342/f0e27064-4d7e-11ee-a360-2eeadace28a2_67186b86_d800_11eb_9f92_4e5893c14be6_caffeine_list_1.jpg",
+        "delivery_price": "0"
+    },
+    {
+        "url": "https://wolt.com/en/ltu/vilnius/restaurant/ridikelis-ir-salota-jeruzales",
+        "name": "Ridik\u0117lis ir salota (Jeruzal\u0117s g.)",
+        "adress": "This is a virtual venue",
+        "estimated_delivery_time": "30-40 min",
+        "tags": [
+            "salad",
+            "vegetarian",
+            "healthy",
+            "cocktail"
+        ],
+        "image": "https://prod-wolt-venue-images-cdn.wolt.com/657af2b3a7b3da05cb312c0c/fc139596-9a7a-11ee-8b9c-b604bf68edd2_657af2b3a7b3da05cb312c0c_list",
+        "delivery_price": "0"
+    },
+    {
+        "url": "https://wolt.com/en/ltu/vilnius/restaurant/sushi-lovers-lt",
+        "name": "Sushi lovers",
+        "adress": "Ber\u017e\u0173 g. 92, Rie\u0161\u0117",
+        "estimated_delivery_time": "35-45 min",
+        "tags": [
+            "asian",
+            "sushi",
+            "vegetarian",
+            "fish",
+            "japanese"
+        ],
+        "image": "https://prod-wolt-venue-images-cdn.wolt.com/633fcf22a40d3e3776b3ec2e/5e866080-4dfd-11ed-9bbc-be9735d09773_sushi_lovers_list_2.jpg",
+        "delivery_price": "0"
+    },
+    {
+        "url": "https://wolt.com/en/ltu/vilnius/restaurant/kaimu-kaimas-jeruzales-g",
+        "name": "Kaim\u0173 kaimas (Jeruzal\u0117s g.)",
+        "adress": "This is a virtual venue",
+        "estimated_delivery_time": "35-45 min",
+        "tags": [
+            "lithuanian",
+            "european"
+        ],
+        "image": "https://prod-wolt-venue-images-cdn.wolt.com/631b4396de86b8389340725d/f01ad3a8-3045-11ed-a55c-e21bf431a638_virs_elio_foto.jpeg",
+        "delivery_price": "0"
+    },
+    {
+        "url": "https://wolt.com/en/ltu/vilnius/restaurant/senoji-kibinine-didzioji-riese",
+        "name": "Senoji Kibinin\u0117 (Did\u017eioji Rie\u0161\u0117)",
+        "adress": "Mol\u0117t\u0173 g. 13, Did\u017eioji Rie\u0161\u0117",
+        "estimated_delivery_time": "30-40 min",
+        "tags": [
+            "breakfast",
+            "lithuanian",
+            "bakery"
+        ],
+        "image": "https://prod-wolt-venue-images-cdn.wolt.com/63319f2f57c265cd584c5433/ff5fc912-488d-11ed-b685-462df694bc94_3f5b7ff2_22b9_11ed_b112_360294a369f1_6301ce29e389bace58d2e8e6cc27cbd6.png",
+        "delivery_price": "0"
+    },
+    {
+        "url": "https://wolt.com/en/ltu/vilnius/restaurant/pizzelle-jeruzales-g",
+        "name": "Pizzelle (Jeruzal\u0117s g.)",
+        "adress": "This is a virtual venue",
+        "estimated_delivery_time": "35-45 min",
+        "tags": [
+            "pizza",
+            "dessert",
+            "italian"
+        ],
+        "image": "https://imageproxy.wolt.com/mes-image/32d360fb-c5a6-459f-98d0-43f45b6effe6/dc904cd5-02fb-45ee-885f-e60e370e899d",
+        "delivery_price": "0"
+    },
+    {
+        "url": "https://wolt.com/en/ltu/vilnius/restaurant/bulvikis-jeruzales",
+        "name": "Bulvikis (Jeruzal\u0117s g.)",
+        "adress": "This is a virtual venue",
+        "estimated_delivery_time": "35-45 min",
+        "tags": [
+            "lithuanian",
+            "european"
+        ],
+        "image": "https://prod-wolt-venue-images-cdn.wolt.com/667546aee8221e20752b178b/2d3820c2-33a7-11ef-ad57-6659cef1952e_bulvikis_wolt_cover.jpg",
+        "delivery_price": "0"
+    },
+    {
+        "url": "https://wolt.com/en/ltu/vilnius/restaurant/lunchin-jeruzale",
+        "name": "Lunchin' (Jeruzal\u0117s g.)",
+        "adress": "This is a virtual venue",
+        "estimated_delivery_time": "35-45 min",
+        "tags": [
+            "european",
+            "healthy",
+            "soup"
+        ],
+        "image": "https://prod-wolt-venue-images-cdn.wolt.com/658169befebd9911644d679b/788d5c64-9e55-11ee-9abf-9afcec3584e1_658169befebd9911644d679b_list",
+        "delivery_price": "0"
+    },
+    {
+        "url": "https://wolt.com/en/ltu/vilnius/restaurant/junky-funky-jeruzales-g",
+        "name": "Junky Funky (Jeruzal\u0117s g.)",
+        "adress": "This is a virtual venue",
+        "estimated_delivery_time": "35-45 min",
+        "tags": [
+            "european",
+            "kebab"
+        ],
+        "image": "https://imageproxy.wolt.com/mes-image/77e89021-258f-46c1-89e2-99ac4b698ace/ada00cb9-11ee-4afb-af01-e6701e28a658",
+        "delivery_price": "0"
+    },
+    {
+        "url": "https://wolt.com/en/ltu/vilnius/restaurant/senoji-kibinine-santariskes",
+        "name": "Senoji Kibinin\u0117 (Santari\u0161k\u0117s)",
+        "adress": "Santari\u0161ki\u0173 g. 1",
+        "estimated_delivery_time": "30-40 min",
+        "tags": [
+            "breakfast",
+            "lithuanian",
+            "bakery"
+        ],
+        "image": "https://prod-wolt-venue-images-cdn.wolt.com/5d4d741e9ef75473987579ee/fd1654326008b0fe6321c35fa3faf78e",
+        "delivery_price": "0"
+    }
+]
