@@ -8,8 +8,6 @@ def formatWoltDeliveryTime(est_time: str) -> str:
 
 def getWoltRestaurants(lat: float, lng: float) -> list[WoltRestaurant]:
 
-    import requests
-
     headers = {
         'accept': 'application/json, text/plain, */*',
         'accept-language': 'en-US,en;q=0.9,lt;q=0.8',
@@ -46,7 +44,11 @@ def getWoltRestaurants(lat: float, lng: float) -> list[WoltRestaurant]:
     # with open(file_path, 'w', encoding='utf-8') as file:
     #     file.write(response_string) 
 
+
+    ### City not found response: {"created": {"$date": 1723549372743}, "expires_in_seconds": 900, "name": "restaurants", "page_title": "Restaurants", "sections": [{"description": "It\u2019s not you, it\u2019s us! We\u2019re working hard to expand and hope to come to your area soon \ud83d\ude0c", "link": {"target": "", "target_sort": "delivers-to", "target_title": "", "title": "", "type": "no-link"}, "name": "no-content", "template": "no-content", "title": "There aren\u2019t any restaurants on Wolt near you yet \ud83d\ude15"}], "show_large_title": false, "show_map": false, "track_id": "discovery:restaurants"}
+
     restaurant_list = []
+    # print(json.dumps(response_object['sections'][1]['items'][0]))
     
     for provider in response_object['sections'][1]['items']:
 
@@ -64,10 +66,10 @@ def getWoltRestaurants(lat: float, lng: float) -> list[WoltRestaurant]:
                                         )
             restaurant_list.append(restaurant)
 
-#     # Writes all gathered info into a file
-#     # file_path = 'textfiles/jsonfile.txt'
-#     # with open(file_path, 'w', encoding='utf-8') as file:
-#     #     file.write(response_string) 
+    # Writes all gathered info into a file
+    file_path = 'textfiles/jsonfile.txt'
+    with open(file_path, 'w', encoding='utf-8') as file:
+        file.write(response_string) 
 
 
     # Writes all reduced info into a file

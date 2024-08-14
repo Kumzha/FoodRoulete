@@ -3,6 +3,7 @@ import { useState, useContext, useEffect } from 'react';
 import { SearchContext } from '@/context/SearchContext';
 import ClipLoader from "react-spinners/ClipLoader";
 import FoodComponent from '@/components/FoodComponent';
+import FoodComponent from '@/components/FoodComponent';
 
 const RoulettePage = () => {
 
@@ -89,9 +90,11 @@ const RoulettePage = () => {
             </div>
   }
 
+  
   if (error) {
     return  <div>
               <div>Error: {error.message}</div>
+              {/* FOR DEBBUG */}
               <button onClick={() => {checkContextState()}}>check state</button>
               <FoodComponent provider="wolt" deliveryInfo={WoltDeliveryInfo}/>
               <FoodComponent provider="bolt" deliveryInfo={BoltDeliveryInfo}/>

@@ -48,7 +48,9 @@ def getBoltRestaurants(lat: float, lng: float) -> list[BoltRestaurant]:
 
     restaurant_list = []
 
-    # print(response_object['data']['providers'][0]['delivery_price']['price_str'])
+    # print(response_object['data']['providers'][0])
+
+    # City not found error response: {'code': 5812, 'message': 'CITY_NOT_FOUND', 'error_hint': 'City not found for (0; 0)'}
     
     #TODO delivery price must be checked if outside Europe(euro)
     for provider in response_object['data']['providers']:
@@ -66,7 +68,7 @@ def getBoltRestaurants(lat: float, lng: float) -> list[BoltRestaurant]:
                             name=provider['name']['value'],
                             address=provider['address'],
                             estimates_delivery_time=formatBoltDeliveryTime(provider['min_delivery_eta'],provider['max_delivery_eta']),
-                            image=provider['images']['provider_list_v1']['aspect_ratio_map']['original']['1x'],
+                            image=provider['images']['provider_list_v1']['aspect_ratio_map']['original']['3x'],
                             #TODO implement tags/categories
                             tags=provider['tags'],
                             delivery_price=provider['delivery_price']['price_str']
