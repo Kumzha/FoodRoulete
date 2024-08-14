@@ -3,7 +3,6 @@ import { useState, useContext, useEffect } from 'react';
 import { SearchContext } from '@/context/SearchContext';
 import ClipLoader from "react-spinners/ClipLoader";
 import FoodComponent from '@/components/FoodComponent';
-import FoodComponent from '@/components/FoodComponent';
 
 const RoulettePage = () => {
 
