@@ -12,6 +12,7 @@ const SearchProvider = ({ children }) => {
     selectedAddress: null
   });
 
+
   return (
     <SearchContext.Provider value={{ data, setData }}>
       {children}

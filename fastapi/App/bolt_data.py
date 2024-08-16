@@ -67,7 +67,7 @@ def getBoltRestaurants(lat: float, lng: float) -> list[BoltRestaurant]:
                             url="https://food.bolt.eu/lt-LT/9-vilnius/p/" + str(provider['provider_id']),
                             name=provider['name']['value'],
                             address=provider['address'],
-                            estimates_delivery_time=formatBoltDeliveryTime(provider['min_delivery_eta'],provider['max_delivery_eta']),
+                            estimated_delivery_time=formatBoltDeliveryTime(provider['min_delivery_eta'],provider['max_delivery_eta']),
                             image=provider['images']['provider_list_v1']['aspect_ratio_map']['original']['3x'],
                             #TODO implement tags/categories
                             tags=provider['tags'],

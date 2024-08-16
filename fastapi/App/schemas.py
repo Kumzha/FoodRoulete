@@ -19,7 +19,7 @@ class BoltRestaurant(BaseModel):
     url: str
     name: str
     address: str
-    estimates_delivery_time: str
+    estimated_delivery_time: str
     image: str
     tags: list
     delivery_price: str
