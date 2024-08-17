@@ -1,23 +1,26 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import { MdDirectionsBike } from "react-icons/md";
 import Image from 'next/image'
 
-// "1x": "https://images.bolt.eu/store/2023/2023-04-26/61edc43a-5a15-4695-a86c-3a1710db3d12.jpeg",
-// "2x": "https://images.bolt.eu/store/2023/2023-04-26/3d5286fe-f08b-4972-a48e-0bb554614285.jpeg",
-// "3x": "https://images.bolt.eu/store/2023/2023-04-26/3d5286fe-f08b-4972-a48e-0bb554614285.jpeg"
-
 const FoodComponent = ( props ) => {
 
+    const [selected, setSelected] = useState(false)
+
+    const handleClick = () => {
+        setSelected(!selected)
+    }
 
     return (
-        <div className='m-1 rounded-lg w-64'>
+        <div className={`m-1 rounded-lg w-64 border-2
+            ${selected ? 'border-blue-500' : 'border-transparent'}`
+        } onClick={handleClick}>
             <div className='w-full h-36 relative overflow-hidden'>
                 <img src={props.deliveryInfo.image} 
                 alt= "Food Provider Image" 
                 className='rounded-t-lg absolute inset-0 w-full h-full object-cover clip-path'/>
             </div>
             <div className='a border-t-0 border-solid border-grey border rounded-b-lg pl-1'>
-                <div className='font-bold text-ellipsis overflow-hidden'>{props.deliveryInfo.name}</div>
+                <div className='font-bold text-ellipsis overflow-hidden whitespace-nowrap'>{props.deliveryInfo.name}</div>
                 {/* <div className='text-sm'>{props.deliveryInfo.address}</div> */}
                 <div className='text-xs flex'>
                     <div className='mr-3 ml-1 items-center flex'>
@@ -25,8 +28,8 @@ const FoodComponent = ( props ) => {
                             alt='Food provider logo'
                             // | How it should be but we need both providers images to be same aspect ratio to make it look nice
                             // V
-                            src={`/${props.provider}logofoodcomp.png`}
-                            // src={`/woltlogofoodcomp.png`}
+                            // src={`/${props.provider}logofoodcomp.png`}
+                            src={`/woltlogofoodcomp.png`}
                             width={40}
                             height={20}
                             className='rounded-lg'
