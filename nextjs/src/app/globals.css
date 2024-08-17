@@ -36,3 +36,12 @@ html{
     color: #333 !important;
     border-bottom: 1px solid #ddd !important;
 }
+
+.no-scrollbar {
+    overflow: auto; /* Allows scrolling */
+    scrollbar-width: none; /* Hides scrollbar in Firefox */
+  }
+  
+  .no-scrollbar::-webkit-scrollbar {
+    display: none; /* Hides scrollbar in Chrome, Safari, and Edge */
+  }

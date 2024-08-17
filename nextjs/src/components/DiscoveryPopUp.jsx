@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import PopUp from "./PopUp";
 import RestaurantsList from "./RestaurantList";
 
-const DiscoveryPopUp = ( props ) => {
+const DiscoveryPopUp = (props) => {
   const [isPopUpOpen, setIsPopUpOpen] = useState(false);
-
+  const [selectedRestaurant, setSelectedRestaurant] = useState(null);
+  const [searchResultList, setSearchResultList] = useState(null);
+  
   const togglePopUp = () => {
     setIsPopUpOpen(!isPopUpOpen);
   };
-  
-  console.log(props.restaurantsList)
 
   return (
     <div className="flex flex-col items-center justify-center h-screen">
@@ -26,12 +26,10 @@ const DiscoveryPopUp = ( props ) => {
         handleClose={togglePopUp}
         content={
           <div>
-            <div>
             <RestaurantsList 
               bolt_restaurants={props.restaurantsList['bolt_restaurants']} 
               wolt_restaurants={props.restaurantsList['wolt_restaurants']} 
             />
-            </div>
           </div>
         }
       />

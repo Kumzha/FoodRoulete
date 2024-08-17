@@ -12,7 +12,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="overscroll-contain">
       <head>
         <script async
           src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjJX6jp9VYLMLc-9_HkYTJ3RkMC788oTQ&libraries=places&callback=initMap">
