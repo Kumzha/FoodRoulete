@@ -1,12 +1,12 @@
 import requests
 import json
-from schemas import WoltRestaurant, AddressSuggestion
+from schemas import Restaurant
 
 
 def formatWoltDeliveryTime(est_time: str) -> str:
     return est_time + ' min'
 
-def getWoltRestaurants(lat: float, lng: float) -> list[WoltRestaurant]:
+def getWoltRestaurants(lat: float, lng: float) -> list[Restaurant]:
 
     headers = {
         'accept': 'application/json, text/plain, */*',
@@ -54,10 +54,11 @@ def getWoltRestaurants(lat: float, lng: float) -> list[WoltRestaurant]:
 
         if provider['venue']['delivers'] == True:
 
-            restaurant = WoltRestaurant(
+            restaurant = Restaurant(
+                    wolt = True,
                     url = provider['link']['target'],
                     name=provider['title'],
-                    adress=provider['venue']['address'],
+                    address=provider['venue']['address'],
                     estimated_delivery_time=formatWoltDeliveryTime(provider['venue']['estimate_range']),
                     tags=provider['filtering']['filters'][0]['values'],
                     image=provider['image']['url'],

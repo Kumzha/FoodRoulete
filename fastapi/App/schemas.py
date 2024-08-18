@@ -20,17 +20,21 @@ class BoltRestaurant(BaseModel):
     name: str
     address: str
     estimated_delivery_time: str
-    image: str
     tags: list
+    image: str
     delivery_price: str
 
-class Restaurant(BaseModel):
+class Restaurant(BaseModel) :
+    bolt: bool = False
+    wolt: bool = False
+    url: str
     name: str
-    has_bolt: bool
-    has_wolt: bool
-
-    bolt_info: BoltRestaurant
-    wolt_info: WoltRestaurant
+    formatted_name: str = ''
+    address: str
+    estimated_delivery_time: str
+    tags: list
+    image: str
+    delivery_price: str
 
 class AddressSuggestion(BaseModel):
     address_name: str
@@ -38,5 +42,4 @@ class AddressSuggestion(BaseModel):
     lng: str
 
 class RestaurantsResponseModel(BaseModel):
-    bolt_restaurants: list[BoltRestaurant]
-    wolt_restaurants: list[WoltRestaurant]
+    restaurants: list[Restaurant]

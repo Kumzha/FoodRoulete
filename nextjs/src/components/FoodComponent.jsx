@@ -13,6 +13,9 @@ const FoodComponent = (props) => {
 
     const handleClick = () => {
         setSelected(!selected);
+        if (!selected) {
+            props.addToList(props.deliveryInfo);
+        }
     };
 
     useEffect(() => {
@@ -38,10 +41,11 @@ const FoodComponent = (props) => {
                             <div className='mr-3 ml-1 items-center flex'>
                                 <Image
                                     alt='Food provider logo'
-                            // | How it should be but we need both providers images to be same aspect ratio to make it look nice
-                            // V
-                            // src={`/${props.provider}logofoodcomp.png`}                                    
-                            src={`/woltlogofoodcomp.png`}                                    width={40}
+                                    // | How it should be but we need both providers images to be same aspect ratio to make it look nice
+                                    // V
+                                    // src={`/${props.provider}logofoodcomp.png`}                                    
+                                    src={`/woltlogofoodcomp.png`}                                    
+                                    width={40}
                                     height={20}
                                     className='rounded-lg'
                                 />

@@ -1,6 +1,6 @@
 import requests
 import json
-from schemas import BoltRestaurant, AddressSuggestion
+from schemas import Restaurant
 
 def formatBoltDeliveryTime(min: int, max: int) -> str:
     min_minutes = int(min/60)
@@ -8,8 +8,7 @@ def formatBoltDeliveryTime(min: int, max: int) -> str:
     return f"{min_minutes}-{max_minutes} min"
 
 
-def getBoltRestaurants(lat: float, lng: float) -> list[BoltRestaurant]:
-
+def getBoltRestaurants(lat: float, lng: float) -> list[Restaurant]:
 
     headers = {
         'accept': '*/*',
@@ -63,7 +62,8 @@ def getBoltRestaurants(lat: float, lng: float) -> list[BoltRestaurant]:
             # else:
             #     rating = provider['rating_info']["rating_value"]
 
-            restaurant = BoltRestaurant(
+            restaurant = Restaurant(
+                            bolt = True, 
                             url="https://food.bolt.eu/lt-LT/9-vilnius/p/" + str(provider['provider_id']),
                             name=provider['name']['value'],
                             address=provider['address'],

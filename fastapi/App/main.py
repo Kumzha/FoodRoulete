@@ -32,7 +32,7 @@ templates = Jinja2Templates(directory="templates")
 def index(request: Request):
     return templates.TemplateResponse('index.html', {'request': request})
 
-@app.post('/submitAddress', response_model=schemas.RestaurantsResponseModel)
+@app.post('/submitAddress', response_model=list[schemas.Restaurant])
 def postaddress(payload: schemas.UserSelection):
 
     #TODO implement address check and formating
