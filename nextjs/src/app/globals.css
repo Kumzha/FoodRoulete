@@ -10,6 +10,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     background: white;
+    overflow: hidden;
 }
 html{
     background-color: white;

@@ -4,9 +4,9 @@
 import { useState, useContext, useEffect } from 'react';
 import { SearchContext } from '@/context/SearchContext';
 import ClipLoader from "react-spinners/ClipLoader";
-import RestaurantsList from '@/components/RestaurantList';
 import DiscoveryPopUp from '@/components/DiscoveryPopUp';
 import DummyData from '@/components/DummyData';
+import SelectedRestaurants from '@/components/SelectedRestaurants';
 
 const RoulettePage = () => {
 
@@ -31,9 +31,24 @@ const RoulettePage = () => {
   const [selectedFoods, setSelectedFoods] = useState([]);
 
   const handleAddFood = (food) => {
-    setSelectedFoods((prevSelectedFoods) => [...prevSelectedFoods, food]);
+    setSelectedFoods((prevSelectedFoods) => {
+
+      if(prevSelectedFoods.includes(food)){
+        return prevSelectedFoods.filter((item) => item !== food);
+      }
+      else{
+        return [...prevSelectedFoods, food];
+      }
+
+    });
   };
-  
+
+  const handleRemoveFood = (food) => {
+    setSelectedFoods((prevSelectedFoods) => {
+      return prevSelectedFoods.filter((item) => item!== food);
+    });
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -83,23 +98,31 @@ const RoulettePage = () => {
 
   
   if (error) {
-    return  <div>
+    return  <div className='relative h-screen w-full'>
               <div>Error: {error.message}</div>
               {/* FOR DEBBUG */}
               <button onClick={() => {checkContextState()}}>check state</button>
               <DiscoveryPopUp 
                 restaurantsList={pageData}
-                addToList={handleAddFood}
+                handleList={handleAddFood}
+              />
+              <SelectedRestaurants
+                selectedFoods={selectedFoods}
+                handleList={handleRemoveFood}
               />
             </div>;
   }
 
   return (
-    <div>
+    <div className='relative h-screen w-full'>
       <button onClick={() => {checkContextState()}}>check state</button>
       <DiscoveryPopUp 
         restaurantsList={pageData}
         addToList={handleAddFood}
+        />
+      <SelectedRestaurants
+        selectedFoods={selectedFoods}
+        handleList={handleRemoveFood}
       />
     </div>
   );

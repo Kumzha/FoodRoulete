@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import FoodComponent from '@/components/FoodComponent';
 
 
-const RestaurantsList = ({restaurantList, addToList }) => {
+const RestaurantsList = ({restaurantList, handleList, activateOnHover }) => {
 
   const [restaurants, setRestaurants] = useState([]);
 
@@ -18,7 +18,8 @@ const RestaurantsList = ({restaurantList, addToList }) => {
             key={index}
             deliveryInfo={restaurant} 
             provider={restaurant.wolt == true ? "wolt" : "bolt"} 
-            addToList={addToList}
+            handleList={handleList}
+            activateOnHover={activateOnHover}
           />
         ))}
       </div>
