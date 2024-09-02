@@ -50,32 +50,33 @@ def getBoltRestaurants(lat: float, lng: float) -> list[Restaurant]:
     # print(response_object['data']['providers'][0])
 
     # City not found error response: {'code': 5812, 'message': 'CITY_NOT_FOUND', 'error_hint': 'City not found for (0; 0)'}
-    
+    try:
     #TODO delivery price must be checked if outside Europe(euro)
-    for provider in response_object['data']['providers']:
+        for provider in response_object['data']['providers']:
 
-        if provider['is_available'] == True:
+            if provider['is_available'] == True:
 
-            # if provider['rating_info'] is None or provider['rating_info']["rating_value"] is None:
-            #     #TODO can play around with this
-            #     rating = '0.0' 
-            # else:
-            #     rating = provider['rating_info']["rating_value"]
+                # if provider['rating_info'] is None or provider['rating_info']["rating_value"] is None:
+                #     #TODO can play around with this
+                #     rating = '0.0' 
+                # else:
+                #     rating = provider['rating_info']["rating_value"]
 
-            restaurant = Restaurant(
-                            bolt = True, 
-                            url="https://food.bolt.eu/lt-LT/9-vilnius/p/" + str(provider['provider_id']),
-                            name=provider['name']['value'],
-                            address=provider['address'],
-                            estimated_delivery_time=formatBoltDeliveryTime(provider['min_delivery_eta'],provider['max_delivery_eta']),
-                            image=provider['images']['provider_list_v1']['aspect_ratio_map']['original']['3x'],
-                            #TODO implement tags/categories
-                            tags=provider['tags'],
-                            delivery_price=provider['delivery_price']['price_str']
-                            )
-            
-            restaurant_list.append(restaurant)
-    
+                restaurant = Restaurant(
+                                bolt = True, 
+                                url="https://food.bolt.eu/lt-LT/9-vilnius/p/" + str(provider['provider_id']),
+                                name=provider['name']['value'],
+                                address=provider['address'],
+                                estimated_delivery_time=formatBoltDeliveryTime(provider['min_delivery_eta'],provider['max_delivery_eta']),
+                                image=provider['images']['provider_list_v1']['aspect_ratio_map']['original']['3x'],
+                                #TODO implement tags/categories
+                                tags=provider['tags'],
+                                delivery_price=provider['delivery_price']['price_str']
+                                )
+                
+                restaurant_list.append(restaurant)
+    except:
+        return restaurant_list
     # Writes all gathered info into a file
 
     # file_path = 'textfiles/json_file.txt'

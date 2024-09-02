@@ -1,5 +1,3 @@
-// rulete page
-
 "use client"
 import { useState, useContext, useEffect } from 'react';
 import { SearchContext } from '@/context/SearchContext';
@@ -7,19 +5,22 @@ import ClipLoader from "react-spinners/ClipLoader";
 import DiscoveryPopUp from '@/components/DiscoveryPopUp';
 import DummyData from '@/components/DummyData';
 import SelectedRestaurants from '@/components/SelectedRestaurants';
+import RoulettePro from 'react-roulette-pro';
+import 'react-roulette-pro/dist/index.css';
 
 const RoulettePage = () => {
 
   const checkContextState = () => {
     // console.log(data) 
-    // console.log(pageData.wolt_restaurants)
-    // console.log(pageData.bolt_restaurants)
-    console.log(selectedFoods)
+    console.log(pageData)
+    // console.log(prizeList)
+    // console.log(prizes)
+    // console.log(reproducedPrizeList)
+    // console.log(selectedFoods)
   }
 
   // Context state data
   const { data } = useContext(SearchContext);
-
   // State variables
   // Page data is restaurant list fetched from the server
   const [pageData, setPageData] = useState(null);
@@ -29,6 +30,45 @@ const RoulettePage = () => {
   const [error, setError] = useState(null);
 
   const [selectedFoods, setSelectedFoods] = useState([]);
+
+  const [start, setStart] = useState(false);
+
+  const handlePrizeDefined = () => {
+    console.log('🥳 Prize defined! 🥳');
+  };
+  const handleStart = () => {
+    setStart((prevState) => !prevState);
+  };
+  
+
+  const prizes = selectedFoods.map(food => ({
+    image: food.image,
+    text: food.name
+  }));
+  
+  const winPrizeIndex = 0;
+  
+  const reproductionArray = (array = [], length = 0) => [
+    ...Array(length)
+      .fill('_')
+      .map(() => array[Math.floor(Math.random() * array.length)]),
+  ];
+  
+  const reproducedPrizeList = [
+    ...prizes,
+    ...reproductionArray(prizes, prizes.length * 3),
+    ...prizes,
+    ...reproductionArray(prizes, prizes.length),
+  ];
+  
+  const generateId = () =>
+    `${Date.now().toString(36)}-${Math.random().toString(36).substring(2)}`;
+  
+  const prizeList = reproducedPrizeList.map((prize) => ({
+    ...prize,
+    id: typeof crypto.randomUUID === 'function' ? crypto.randomUUID() : generateId(),
+  }));
+
 
   const handleAddFood = (food) => {
     setSelectedFoods((prevSelectedFoods) => {
@@ -43,6 +83,17 @@ const RoulettePage = () => {
     });
   };
 
+  const prizeIndex = prizes.length * 4 + winPrizeIndex;
+
+  const surpriseMe = () => {
+    setSelectedFoods([]);
+    for (let i = 0; i < 4; i++) {
+      const randomIndex = Math.floor(Math.random() * pageData.length);
+      const randomRestaurant = pageData[randomIndex];
+      setSelectedFoods((prevSelectedFoods) => [...prevSelectedFoods, randomRestaurant]);
+    }
+  };
+
   const handleRemoveFood = (food) => {
     setSelectedFoods((prevSelectedFoods) => {
       return prevSelectedFoods.filter((item) => item!== food);
@@ -52,7 +103,7 @@ const RoulettePage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/submitAddress', {
+        const response = await fetch('http://localhost:8000/submitAddress', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -68,10 +119,16 @@ const RoulettePage = () => {
         if(!response.ok) {
           throw new Error('Network response was not ok');
         }
+
+        if (!response.data || response.data.length === 0) {
+          throw new Error('No restaurants found');
+        }
+
         const result = await response.json();
         setPageData(result);
       }catch(error){
         setError(error);
+        console.log(error);
         // Setting state as dummyData for testing and quality of life
         // Must be removed
         setPageData(DummyData);
@@ -100,16 +157,40 @@ const RoulettePage = () => {
   if (error) {
     return  <div className='relative h-screen w-full'>
               <div>Error: {error.message}</div>
+              <div>Go to homepage</div>
               {/* FOR DEBBUG */}
               <button onClick={() => {checkContextState()}}>check state</button>
-              <DiscoveryPopUp 
-                restaurantsList={pageData}
-                handleList={handleAddFood}
+            <DiscoveryPopUp 
+              restaurantsList={pageData}
+              handleList={handleAddFood}
+              selectedFoods={selectedFoods}
               />
-              <SelectedRestaurants
-                selectedFoods={selectedFoods}
-                handleList={handleRemoveFood}
-              />
+            <button
+              onClick={surpriseMe}
+              className="bg-gray-500 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-gray-600 focus:outline-none"
+            >
+              Surprise me!
+            </button>  
+            <button
+              onClick={handleStart}
+              className="bg-gray-500 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-gray-600 focus:outline-none"
+              >
+            Spin me!
+            </button> 
+            <RoulettePro
+              prizes={prizeList}
+              prizeIndex={prizeIndex}
+              start={start}
+              onPrizeDefined={handlePrizeDefined}
+              defaultDesignOptions={{
+                prizesWithText: true
+              }}  
+              style={{ width: '100%', height: 'auto' }}
+            />
+            <SelectedRestaurants
+              selectedFoods={selectedFoods}
+              handleList={handleRemoveFood}
+            />
             </div>;
   }
 
@@ -118,8 +199,33 @@ const RoulettePage = () => {
       <button onClick={() => {checkContextState()}}>check state</button>
       <DiscoveryPopUp 
         restaurantsList={pageData}
-        addToList={handleAddFood}
+        handleList={handleAddFood}
+        selectedFoods={selectedFoods}
         />
+      <button
+        onClick={surpriseMe}
+        className="bg-gray-500 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-gray-600 focus:outline-none"
+      >
+        Surprise me!
+      </button>  
+      <button
+        onClick={handleStart}
+        className="bg-gray-500 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-gray-600 focus:outline-none"
+      >
+        Spin me!
+      </button> 
+      <RoulettePro
+          prizes={prizeList}
+          prizeIndex={prizeIndex}
+          start={start}
+          onPrizeDefined={handlePrizeDefined}
+          defaultDesignOptions={{
+            wheelDesign: 'default',
+            prizeDesign: 'default',
+            prizesWithText: true
+          }}
+          className="w-full h-full"
+      />
       <SelectedRestaurants
         selectedFoods={selectedFoods}
         handleList={handleRemoveFood}

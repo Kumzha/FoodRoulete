@@ -18,7 +18,7 @@ def getRestaurantList(lat: float, lng: float, wolt: bool, bolt: bool) -> list[sc
     if(bolt == True):
         bolt_restaurants = getBoltRestaurants(lat, lng)
     
-    print(type((bolt_restaurants+wolt_restaurants)[0]))
+    # print(type((bolt_restaurants+wolt_restaurants)[0]))
     
     return bolt_restaurants + wolt_restaurants
 

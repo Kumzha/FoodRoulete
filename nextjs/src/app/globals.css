@@ -46,3 +46,37 @@ html{
   .no-scrollbar::-webkit-scrollbar {
     display: none; /* Hides scrollbar in Chrome, Safari, and Edge */
   }
+  
+  .roulette-pro-wrapper {
+    max-height: 234px; 
+    overflow-y: auto; 
+  }
+
+  .roulette-pro-regular-prize-item {
+    width: 205px;  /* Adjust to the size you need */
+    height: 234px; /* Adjust to the size you need */
+    margin-left: 5px;
+    overflow: hidden; /* Ensures that content does not overflow */
+    border-radius: 15px; /* Rounded top corners */
+    box-sizing: border-box; /* Includes padding and border in the element’s width and height */
+  }
+  
+  .roulette-pro-regular-prize-item-wrapper {
+    width: 100%; /* Ensure the wrapper covers the full container */
+    height: 100%; /* Ensure the wrapper covers the full container */
+    display: flex; /* Flexbox to center content if needed */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+  }
+  
+  .roulette-pro-regular-image-wrapper {
+    width: 100%; /* Ensure the image wrapper is full width */
+    height: 100%; /* Ensure the image wrapper is full height */
+  }
+  
+  .roulette-pro-regular-prize-item-image {
+    width: 100%; /* Ensures the image covers the container width */
+    height: 100%; /* Ensures the image covers the container height */
+    object-fit: cover; /* Ensure the image covers the container */
+    border-radius: 15px 15px 0 0; /* Rounded top corners */
+  }

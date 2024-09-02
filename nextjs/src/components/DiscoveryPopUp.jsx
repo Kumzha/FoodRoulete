@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PopUp from "./PopUp";
 import RestaurantsList from "./RestaurantList";
 
-const DiscoveryPopUp = ({restaurantsList, handleList}) => {
+const DiscoveryPopUp = ({restaurantsList, handleList, selectedFoods}) => {
   const [isPopUpOpen, setIsPopUpOpen] = useState(false);
   
   const togglePopUp = () => {
@@ -23,6 +23,7 @@ const DiscoveryPopUp = ({restaurantsList, handleList}) => {
         handleClose={togglePopUp}
         restaurantsList={restaurantsList} 
         handleList={handleList}
+        selectedFoods={selectedFoods}
       />
     </div>
   );

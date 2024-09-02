@@ -8,7 +8,7 @@ export default function SelectedRestaurants({selectedFoods, handleList}) {
 
 
   return (
-    <div className='absolute bottom-0 w-full h-40 mb-40 bg-gray-500'>
+    <div className='absolute bottom-0 w-full h-56 mb-40 bg-gray-500'>
         <div>
             <h1 className='text-center text-white font-bold'>Selected Restaurants</h1>
             <RestaurantsList 
