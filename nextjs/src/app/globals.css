@@ -5,6 +5,7 @@
 
 body {
     height: 100vh;
+    max-width: 100vw;
     margin-left: auto;
     margin-right: auto;
     background: white;
@@ -36,6 +37,9 @@ html{
     border-bottom: 1px solid #ddd !important;
 }
 
+
+
+
 .no-scrollbar {
     overflow: auto; /* Allows scrolling */
     scrollbar-width: none; /* Hides scrollbar in Firefox */
@@ -44,6 +48,18 @@ html{
   .no-scrollbar::-webkit-scrollbar {
     display: none; /* Hides scrollbar in Chrome, Safari, and Edge */
   }
+  .no-scroll {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+  }
+
+
+
+
+
+
+
   
   .roulette-pro-wrapper {
     max-height: 234px; 
