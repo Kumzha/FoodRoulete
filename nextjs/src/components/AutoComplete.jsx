@@ -52,11 +52,11 @@ export default function AutoComplete( props ) {
 
   return (
     <form className="">
-        <div className='flex ml-10 w-1/2 p-1 pl-5 border-zinc-800 border-2 rounded-lg'>
+        <div className='flex w-1/2 p-1 pl-2 border-zinc-800 border-2 rounded-lg min-w-64 max-w-[460px]'>
             <div className="flex items-center justify-center">
             <IoSearchSharp/>
             </div>
-            <input ref = {placeAutoCompleteRef} type="text" className="w-11/12 p-1 ml-5" placeholder='Enter your address: ' style={inputStyle}/>
+            <input ref = {placeAutoCompleteRef} type="text" className="w-11/12 p-1 ml-1" placeholder='Enter your address: ' style={inputStyle}/>
         </div>
     </form>
 

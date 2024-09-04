@@ -11,7 +11,7 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  return (
+  return (  
     <html lang="en" className="overscroll-contain">
       <head>
         <script async
@@ -20,7 +20,6 @@ export default function RootLayout({ children }) {
       </head>
       <body className={inter.className} >
         <SearchProvider>
-          <Header/>
           {children}
         </SearchProvider>
       </body>

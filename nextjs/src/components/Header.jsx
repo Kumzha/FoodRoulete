@@ -3,12 +3,13 @@ import MenuItem from './MenuItem'
 import { AiFillHome } from 'react-icons/ai'
 import { BsFillInfoCircleFill } from 'react-icons/bs'
 import Link from 'next/link'
+import  Image from 'next/image'
 
 export default function Header() {
   return (
-    <div className='flex justify-between items-center py-5 px-1 max-w-6xl mx-auto border-b-grey border-b-2'>
+    <div className='flex justify-between items-center py-5 px-1 mx-auto border-b-grey border-b-2'>
         <Link href={'/'} className=''>
-            <span className='text-2xl font-bold bg-green-600 py-1 px-2 rounded-lg text-white'>Food Roulette</span>
+          <Image src="/MUNCHI.svg" alt="Munchi Logo" width={100} height={100} />
         </Link>
 
         <div className='flex gap-4 font-bold'>

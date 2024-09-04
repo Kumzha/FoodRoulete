@@ -9,7 +9,6 @@ const StartButton = ( props ) => {
 
   const router = useRouter();
   const { setData, data: contextData } = useContext(SearchContext);
-  const data = { id: 5, name: 'Example' };
   const uiState = props.state;
 
     const clickHandler = useCallback(async (e) => {
@@ -22,14 +21,18 @@ const StartButton = ( props ) => {
 
 
 
-  return (
-    <div className="flex justify-between mx-auto items-center mt-32">
-        <button
-        className="bg-gray-500 text-white px-5 py-2 mx-auto rounded-md" 
-        onClick={clickHandler}
-        >Start</button>
-    </div>
-  )
-}
+    return (
+      <div className="relative">
+        <div className="absolute left-1/2 transform -translate-x-1/2 mt-16">
+          <button
+            className="bg-red-600 text-white text-sm px-10 py-2 rounded-md"
+            onClick={clickHandler}
+          >
+            START
+          </button>
+        </div>
+      </div>
+    );
+} 
 
 export default StartButton

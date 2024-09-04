@@ -7,16 +7,12 @@ import DummyData from '@/components/DummyData';
 import SelectedRestaurants from '@/components/SelectedRestaurants';
 import RoulettePro from 'react-roulette-pro';
 import 'react-roulette-pro/dist/index.css';
+import Sidebar from '@/components/SideBar';
 
 const RoulettePage = () => {
 
   const checkContextState = () => {
-    // console.log(data) 
-    console.log(pageData)
-    // console.log(prizeList)
-    // console.log(prizes)
-    // console.log(reproducedPrizeList)
-    // console.log(selectedFoods)
+    // console.log(pageData)
   }
 
   // Context state data
@@ -33,6 +29,8 @@ const RoulettePage = () => {
 
   const [start, setStart] = useState(false);
 
+  const [PopUpOpen, setPopUpOpen] = useState(false);
+
   const handlePrizeDefined = () => {
     console.log('🥳 Prize defined! 🥳');
   };
@@ -40,6 +38,9 @@ const RoulettePage = () => {
     setStart((prevState) => !prevState);
   };
   
+  const togglePopUp = () => {
+    setPopUpOpen(!PopUpOpen);
+  };
 
   const prizes = selectedFoods.map(food => ({
     image: food.image,
@@ -155,43 +156,62 @@ const RoulettePage = () => {
 
   
   if (error) {
-    return  <div className='relative h-screen w-full'>
-              <div>Error: {error.message}</div>
-              <div>Go to homepage</div>
-              {/* FOR DEBBUG */}
-              <button onClick={() => {checkContextState()}}>check state</button>
-            <DiscoveryPopUp 
-              restaurantsList={pageData}
-              handleList={handleAddFood}
-              selectedFoods={selectedFoods}
-              />
+    return (
+      <div className="relative h-screen w-full flex">
+        {/* Sidebar */}
+        <div>
+          <Sidebar />
+        </div>
+  
+        {/* Main Content */}
+        <div className="flex-1 p-4">
+          <DiscoveryPopUp
+            restaurantsList={pageData}
+            handleList={handleAddFood}
+            selectedFoods={selectedFoods}
+            isOpen={PopUpOpen}
+            onClose={() => setPopUpOpen(false)}
+          />
+  
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-4">
+            <button
+              onClick={togglePopUp}
+              className="bg-gray-500 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-gray-600 focus:outline-none"
+            >
+              Search Restaurants
+            </button>
             <button
               onClick={surpriseMe}
               className="bg-gray-500 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-gray-600 focus:outline-none"
             >
               Surprise me!
-            </button>  
+            </button>
             <button
               onClick={handleStart}
               className="bg-gray-500 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-gray-600 focus:outline-none"
-              >
-            Spin me!
-            </button> 
-            <RoulettePro
-              prizes={prizeList}
-              prizeIndex={prizeIndex}
-              start={start}
-              onPrizeDefined={handlePrizeDefined}
-              defaultDesignOptions={{
-                prizesWithText: true
-              }}  
-              style={{ width: '100%', height: 'auto' }}
-            />
-            <SelectedRestaurants
-              selectedFoods={selectedFoods}
-              handleList={handleRemoveFood}
-            />
-            </div>;
+            >
+              Spin me!
+            </button>
+          </div>
+  
+          <RoulettePro
+            prizes={prizeList}
+            prizeIndex={prizeIndex}
+            start={start}
+            onPrizeDefined={handlePrizeDefined}
+            defaultDesignOptions={{
+              prizesWithText: true,
+            }}
+            style={{ width: '100%', height: 'auto' }}
+          />
+  
+          <SelectedRestaurants
+            selectedFoods={selectedFoods}
+            handleList={handleRemoveFood}
+          />
+        </div>
+      </div>
+    );
   }
 
   return (

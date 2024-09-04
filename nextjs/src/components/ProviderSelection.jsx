@@ -6,7 +6,7 @@ import ToggleSwitch from './ToggleSwitch'
 export default function ProviderSelection( props ) {
 
   return (
-    <div className='ml-10'>
+    <div className='mr-10'>
         <Image
             alt='Food provider logo'
             src={`/${props.provider}foodicon.png`}
