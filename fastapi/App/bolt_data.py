@@ -47,7 +47,12 @@ def getBoltRestaurants(lat: float, lng: float) -> list[Restaurant]:
 
     restaurant_list = []
 
-    # print(response_object['data']['providers'][0])
+    
+    file_path = 'textfiles/bolt_providers.txt'
+    with open(file_path, 'w', encoding='utf-8') as file:
+        file.write(response_string) 
+
+    # print(response_object['data']['providers'][0]['rating_info']["rating_value"])
 
     # City not found error response: {'code': 5812, 'message': 'CITY_NOT_FOUND', 'error_hint': 'City not found for (0; 0)'}
     try:
@@ -56,19 +61,21 @@ def getBoltRestaurants(lat: float, lng: float) -> list[Restaurant]:
 
             if provider['is_available'] == True:
 
-                # if provider['rating_info'] is None or provider['rating_info']["rating_value"] is None:
-                #     #TODO can play around with this
-                #     rating = '0.0' 
-                # else:
-                #     rating = provider['rating_info']["rating_value"]
+                if provider['rating_info'] is None or provider['rating_info']["rating_value"] is None:
+                    #TODO can play around with this
+                    provider_rating = 3 
+                else:
+                    provider_rating = provider['rating_info']["rating_value"]
 
                 restaurant = Restaurant(
                                 bolt = True, 
                                 url="https://food.bolt.eu/lt-LT/9-vilnius/p/" + str(provider['provider_id']),
                                 name=provider['name']['value'],
+                                # rating=provider['rating_info']["rating_value"],
                                 address=provider['address'],
                                 estimated_delivery_time=formatBoltDeliveryTime(provider['min_delivery_eta'],provider['max_delivery_eta']),
                                 image=provider['images']['provider_list_v1']['aspect_ratio_map']['original']['3x'],
+                                rating=provider_rating,
                                 #TODO implement tags/categories
                                 tags=provider['tags'],
                                 delivery_price=provider['delivery_price']['price_str']
@@ -77,11 +84,6 @@ def getBoltRestaurants(lat: float, lng: float) -> list[Restaurant]:
                 restaurant_list.append(restaurant)
     except:
         return restaurant_list
-    # Writes all gathered info into a file
-
-    # file_path = 'textfiles/json_file.txt'
-    # with open(file_path, 'w', encoding='utf-8') as file:
-    #     file.write(response_string) 
 
     # Writes all reduced info into a file
 

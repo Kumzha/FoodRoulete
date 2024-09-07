@@ -46,7 +46,8 @@ def postaddress(payload: schemas.UserSelection):
 
 
     restaurants_list = getRestaurantList(lat, lng, wolt, bolt)
-    print(type(restaurants_list))
+
+    # print(restaurants_list)
     return restaurants_list
 
 @app.get('/test')

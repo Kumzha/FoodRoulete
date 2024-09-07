@@ -1,4 +1,5 @@
 from pydantic import BaseModel
+from typing import Optional
 
 class UserSelection(BaseModel):
     lat: float
@@ -35,6 +36,7 @@ class Restaurant(BaseModel) :
     tags: list
     image: str
     delivery_price: str
+    rating: Optional[float] = 5
 
 class AddressSuggestion(BaseModel):
     address_name: str

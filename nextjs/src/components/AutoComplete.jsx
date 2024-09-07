@@ -2,7 +2,9 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useJsApiLoader } from "@react-google-maps/api"
 import { IoSearchSharp } from "react-icons/io5";
+import { Inter } from "next/font/google";
 
+const font = Inter({ subsets: ["latin"], weight: "400" });
 
 const libs = ["places"];
 
@@ -51,8 +53,8 @@ export default function AutoComplete( props ) {
     }, [autoComplete, props])
 
   return (
-    <form className="">
-        <div className='flex w-1/2 p-1 pl-2 border-zinc-800 border-2 rounded-lg min-w-64 max-w-[460px]'>
+    <form className={font.className}>
+        <div className='flex w-3/4 p-1 pl-2 border-zinc-800 border-2 rounded-lg min-w-64 max-w-[460px]'>
             <div className="flex items-center justify-center">
             <IoSearchSharp/>
             </div>

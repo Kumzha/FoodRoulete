@@ -5,6 +5,7 @@ const DummyData = [
         "url": "https://wolt.com/en/ltu/vilnius/restaurant/pizzelle-virsuliskiu",
         "name": "Pizzelle (Mada)",
         "formatted_name": "",
+        "rating": 4.5,
         "address": "This is a virtual venue",
         "estimated_delivery_time": "35-45 min",
         "tags": [
@@ -21,6 +22,7 @@ const DummyData = [
         "url": "https://wolt.com/en/ltu/vilnius/restaurant/dppizza-laisves-pr",
         "name": "DP Pizza (Laisvės pr.)",
         "formatted_name": "",
+        "rating": 5,
         "address": "This is a virtual venue",
         "estimated_delivery_time": "25-35 min",
         "tags": [
@@ -36,6 +38,7 @@ const DummyData = [
         "url": "https://wolt.com/en/ltu/vilnius/restaurant/ridikelis-ir-salota-fabijoniskiu",
         "name": "Ridikėlis ir salota (Fabijoniškių g.)",
         "formatted_name": "",
+        "rating": 3.5,
         "address": "This is a virtual venue",
         "estimated_delivery_time": "30-40 min",
         "tags": [
@@ -53,6 +56,7 @@ const DummyData = [
         "url": "https://wolt.com/en/ltu/vilnius/restaurant/mollusca-paupys",
         "name": "Mollusca (Paupys)",
         "formatted_name": "",
+        "rating": 3.5,
         "address": "Aukštaičių g. 7",
         "estimated_delivery_time": "30-40 min",
         "tags": [
@@ -67,6 +71,7 @@ const DummyData = [
         "url": "https://wolt.com/en/ltu/vilnius/restaurant/pizzelle-savanoriu",
         "name": "Pizzelle (Vingis)",
         "formatted_name": "",
+        "rating": 3.5,
         "address": "This is a virtual venue",
         "estimated_delivery_time": "35-45 min",
         "tags": [
@@ -83,6 +88,7 @@ const DummyData = [
         "url": "https://wolt.com/en/ltu/vilnius/restaurant/pizzelle-didzioji-g",
         "name": "Pizzelle (Didžioji g.)",
         "formatted_name": "",
+        "rating": 3.5,
         "address": "This is a virtual venue",
         "estimated_delivery_time": "30-40 min",
         "tags": [
@@ -99,6 +105,7 @@ const DummyData = [
         "url": "https://wolt.com/en/ltu/vilnius/restaurant/plus-plus-plus-vilniaus-g",
         "name": "Plus Plus Plus (Vilniaus g.)",
         "formatted_name": "",
+        "rating": 3.5,
         "address": "Vilniaus g. 39",
         "estimated_delivery_time": "30-40 min",
         "tags": [
@@ -114,6 +121,7 @@ const DummyData = [
         "url": "https://wolt.com/en/ltu/vilnius/restaurant/kaimu-kaimas-jeruzales-g",
         "name": "Kaimų kaimas (Jeruzalės g.)",
         "formatted_name": "",
+        "rating": 3.5,
         "address": "This is a virtual venue",
         "estimated_delivery_time": "35-45 min",
         "tags": [
@@ -129,6 +137,7 @@ const DummyData = [
         "url": "https://wolt.com/en/ltu/vilnius/restaurant/pizza-express-antezeriai",
         "name": "Pizza Express (Antežeriai)",
         "formatted_name": "",
+        "rating": 3.5,
         "address": "Žirgų g. 24, Antežeriai",
         "estimated_delivery_time": "45-55 min",
         "tags": [
@@ -144,6 +153,7 @@ const DummyData = [
         "url": "https://wolt.com/en/ltu/vilnius/restaurant/bulvikis-mada",
         "name": "Bulvikis (Mada)",
         "formatted_name": "",
+        "rating": 3.5,
         "address": "This is a virtual venue",
         "estimated_delivery_time": "30-40 min",
         "tags": [
@@ -159,6 +169,7 @@ const DummyData = [
         "url": "https://wolt.com/en/ltu/vilnius/restaurant/kebab-inn-dariaus-ir-gireno-g",
         "name": "Kebab inn (Dariaus ir Girėno g.)",
         "formatted_name": "",
+        "rating": 3.5,
         "address": "Dariaus ir Girėno g. 17",
         "estimated_delivery_time": "35-45 min",
         "tags": [
@@ -178,6 +189,7 @@ const DummyData = [
         "url": "https://wolt.com/en/ltu/vilnius/restaurant/doublepizzasushi",
         "name": "W Pinsa Pizza (Panerių g.)",
         "formatted_name": "",
+        "rating": 3.5,
         "address": "This is a virtual venue",
         "estimated_delivery_time": "35-45 min",
         "tags": [
@@ -195,6 +207,7 @@ const DummyData = [
         "url": "https://wolt.com/en/ltu/vilnius/restaurant/bulvikis-jeruzales",
         "name": "Bulvikis (Jeruzalės g.)",
         "formatted_name": "",
+        "rating": 3.5,
         "address": "This is a virtual venue",
         "estimated_delivery_time": "35-45 min",
         "tags": [
@@ -210,6 +223,7 @@ const DummyData = [
         "url": "https://wolt.com/en/ltu/vilnius/restaurant/pizzelle-akropolis-vilnius",
         "name": "Pizzelle (Akropolis Vilnius)",
         "formatted_name": "",
+        "rating": 3.5,
         "address": "Ozo g. 25",
         "estimated_delivery_time": "30-40 min",
         "tags": [
@@ -225,6 +239,7 @@ const DummyData = [
         "url": "https://wolt.com/en/ltu/vilnius/restaurant/chief-pizza-sauletekis",
         "name": "Chief Pizza (Saulėtekis)",
         "formatted_name": "",
+        "rating": 3.5,
         "address": "Saulėtekio al. 32",
         "estimated_delivery_time": "40-50 min",
         "tags": [
@@ -239,6 +254,7 @@ const DummyData = [
         "url": "https://wolt.com/en/ltu/vilnius/restaurant/ridikelis-ir-salota-big",
         "name": "Ridikėlis ir salota (PC BIG)",
         "formatted_name": "",
+        "rating": 3.5,
         "address": "This is a virtual venue",
         "estimated_delivery_time": "40-50 min",
         "tags": [
@@ -256,6 +272,7 @@ const DummyData = [
         "url": "https://wolt.com/en/ltu/vilnius/restaurant/sofik-kebab-lazdynai",
         "name": "Sofik Kebab (Lazdynai)",
         "formatted_name": "",
+        "rating": 3.5,
         "address": "Architektų g. 19",
         "estimated_delivery_time": "30-40 min",
         "tags": [
@@ -271,6 +288,7 @@ const DummyData = [
         "url": "https://wolt.com/en/ltu/vilnius/restaurant/bulvikis-big",
         "name": "Bulvikis (BIG)",
         "formatted_name": "",
+        "rating": 3.5,
         "address": "This is a virtual venue",
         "estimated_delivery_time": "40-50 min",
         "tags": [
@@ -286,6 +304,7 @@ const DummyData = [
         "url": "https://wolt.com/en/ltu/vilnius/restaurant/chacapuri",
         "name": "Chačapuri Bistro (Pilies g.)",
         "formatted_name": "",
+        "rating": 3.5,
         "address": "Pilies g. 23",
         "estimated_delivery_time": "35-45 min",
         "tags": [
@@ -301,6 +320,7 @@ const DummyData = [
         "url": "https://wolt.com/en/ltu/vilnius/restaurant/kaimu-kaimas-ukmerges",
         "name": "Kaimų kaimas (BIG)",
         "formatted_name": "",
+        "rating": 3.5,
         "address": "This is a virtual venue",
         "estimated_delivery_time": "40-50 min",
         "tags": [
@@ -316,6 +336,7 @@ const DummyData = [
         "url": "https://wolt.com/en/ltu/vilnius/restaurant/caffeine-paupys",
         "name": "Caffeine (Paupys)",
         "formatted_name": "",
+        "rating": 3.5,
         "address": "Aukštaičių g. 7",
         "estimated_delivery_time": "30-40 min",
         "tags": [
@@ -334,6 +355,7 @@ const DummyData = [
         "url": "https://wolt.com/en/ltu/vilnius/restaurant/double-sushi-paneriu-g",
         "name": "Double Sushi (Panerių g.)",
         "formatted_name": "",
+        "rating": 3.5,
         "address": "Panerių g. 44",
         "estimated_delivery_time": "35-45 min",
         "tags": [
@@ -350,6 +372,7 @@ const DummyData = [
         "url": "https://wolt.com/en/ltu/vilnius/restaurant/pizza-max-pilaite",
         "name": "Pizzamax (Pilaitė)",
         "formatted_name": "",
+        "rating": 3.5,
         "address": "Vydūno g. 4",
         "estimated_delivery_time": "35-45 min",
         "tags": [
@@ -368,6 +391,7 @@ const DummyData = [
         "url": "https://wolt.com/en/ltu/vilnius/restaurant/plus-plus-plus-traku-g",
         "name": "Plus Plus Plus (Trakų g.)",
         "formatted_name": "",
+        "rating": 3.5,
         "address": "Trakų g. 2",
         "estimated_delivery_time": "30-40 min",
         "tags": [
@@ -383,6 +407,7 @@ const DummyData = [
         "url": "https://wolt.com/en/ltu/vilnius/restaurant/pizzelle-jeruzales-g",
         "name": "Pizzelle (Jeruzalės g.)",
         "formatted_name": "",
+        "rating": 3.5,
         "address": "This is a virtual venue",
         "estimated_delivery_time": "35-45 min",
         "tags": [
@@ -399,6 +424,7 @@ const DummyData = [
         "url": "https://wolt.com/en/ltu/vilnius/restaurant/pica-max-erfurto-g",
         "name": "Pizzamax (Erfurto g.)",
         "formatted_name": "",
+        "rating": 3.5,
         "address": "Erfurto g. 30",
         "estimated_delivery_time": "35-45 min",
         "tags": [
@@ -417,6 +443,7 @@ const DummyData = [
         "url": "https://wolt.com/en/ltu/vilnius/restaurant/pizzamax-lazdyneliai",
         "name": "Pizzamax (Lazdynėliai)",
         "formatted_name": "",
+        "rating": 3.5,
         "address": "Šiltnamių g. 21",
         "estimated_delivery_time": "35-45 min",
         "tags": [
@@ -434,6 +461,7 @@ const DummyData = [
         "url": "https://wolt.com/en/ltu/vilnius/restaurant/dppizza-kareiviu-g",
         "name": "DP Pizza (Kareivių g.)",
         "formatted_name": "",
+        "rating": 3.5,
         "address": "This is a virtual venue",
         "estimated_delivery_time": "30-40 min",
         "tags": [
@@ -449,6 +477,7 @@ const DummyData = [
         "url": "https://wolt.com/en/ltu/vilnius/restaurant/pizzelle-ukmerges",
         "name": "Pizzelle (BIG)",
         "formatted_name": "",
+        "rating": 3.5,
         "address": "This is a virtual venue",
         "estimated_delivery_time": "40-50 min",
         "tags": [
@@ -465,6 +494,7 @@ const DummyData = [
         "url": "https://wolt.com/en/ltu/vilnius/restaurant/dppizza-paneriu-g",
         "name": "DP Pizza (Panerių g.)",
         "formatted_name": "",
+        "rating": 3.5,
         "address": "This is a virtual venue",
         "estimated_delivery_time": "30-40 min",
         "tags": [
@@ -480,6 +510,7 @@ const DummyData = [
         "url": "https://wolt.com/en/ltu/vilnius/restaurant/junky-funky-pc-mada",
         "name": "Junky Funky (PC Mada)",
         "formatted_name": "",
+        "rating": 3.5,
         "address": "This is a virtual venue",
         "estimated_delivery_time": "30-40 min",
         "tags": [
@@ -495,6 +526,7 @@ const DummyData = [
         "url": "https://wolt.com/en/ltu/vilnius/restaurant/junky-funky-didzioji-g",
         "name": "Junky Funky (Didžioji g.)",
         "formatted_name": "",
+        "rating": 3.5,
         "address": "This is a virtual venue",
         "estimated_delivery_time": "30-40 min",
         "tags": [
@@ -510,6 +542,7 @@ const DummyData = [
         "url": "https://wolt.com/en/ltu/vilnius/restaurant/junky-funky-akropolis-vilnius",
         "name": "Junky Funky (Akropolis Vilnius)",
         "formatted_name": "",
+        "rating": 3.5,
         "address": "Ozo g. 25",
         "estimated_delivery_time": "25-35 min",
         "tags": [
@@ -525,6 +558,7 @@ const DummyData = [
         "url": "https://wolt.com/en/ltu/vilnius/restaurant/junky-funky-vingis",
         "name": "Junky Funky (Vingis)",
         "formatted_name": "",
+        "rating": 3.5,
         "address": "Savanorių pr. 7 ",
         "estimated_delivery_time": "30-40 min",
         "tags": [
@@ -540,6 +574,7 @@ const DummyData = [
         "url": "https://wolt.com/en/ltu/vilnius/restaurant/junky-funky-fabijoniskiu-g",
         "name": "Junky Funky (Fabijoniškių g.)",
         "formatted_name": "",
+        "rating": 3.5,
         "address": "This is a virtual venue",
         "estimated_delivery_time": "30-40 min",
         "tags": [
@@ -555,6 +590,7 @@ const DummyData = [
         "url": "https://wolt.com/en/ltu/vilnius/restaurant/junky-funky-zirmunu-g",
         "name": "Junky Funky (Žirmūnų g.)",
         "formatted_name": "",
+        "rating": 3.5,
         "address": "This is a virtual venue",
         "estimated_delivery_time": "30-40 min",
         "tags": [
@@ -570,6 +606,7 @@ const DummyData = [
         "url": "https://wolt.com/en/ltu/vilnius/restaurant/junky-funky-jeruzales-g",
         "name": "Junky Funky (Jeruzalės g.)",
         "formatted_name": "",
+        "rating": 3.5,
         "address": "This is a virtual venue",
         "estimated_delivery_time": "35-45 min",
         "tags": [
@@ -585,6 +622,7 @@ const DummyData = [
         "url": "https://wolt.com/en/ltu/vilnius/restaurant/junky-funky-pc-big",
         "name": "Junky Funky (PC BIG)",
         "formatted_name": "",
+        "rating": 3.5,
         "address": "This is a virtual venue",
         "estimated_delivery_time": "40-50 min",
         "tags": [

@@ -1,9 +1,8 @@
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
 import { SearchProvider } from "@/context/SearchContext";
 
-const inter = Inter({ subsets: ["latin"] });
+const font = Poppins({ subsets: ["latin"], weight: "700" });
 
 export const metadata = {
   title: "FoodRoulette",
@@ -18,7 +17,7 @@ export default function RootLayout({ children }) {
           src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjJX6jp9VYLMLc-9_HkYTJ3RkMC788oTQ&libraries=places&callback=initMap">
         </script> 
       </head>
-      <body className={inter.className} >
+      <body className={font.className} >
         <SearchProvider>
           {children}
         </SearchProvider>

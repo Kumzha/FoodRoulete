@@ -8,6 +8,7 @@ import SelectedRestaurants from '@/components/SelectedRestaurants';
 import RoulettePro from 'react-roulette-pro';
 import 'react-roulette-pro/dist/index.css';
 import Sidebar from '@/components/Sidebar';
+import MyRouletteComponent from '@/components/MyRoulleteComponent';
 
 const RoulettePage = () => {
 
@@ -44,7 +45,9 @@ const RoulettePage = () => {
 
   const prizes = selectedFoods.map(food => ({
     image: food.image,
-    text: food.name
+    text: food.name,
+    rating: food.rating,
+    provider: food.wolt ? 'Wolt' : 'Bolt',
   }));
   
   const winPrizeIndex = 0;
@@ -121,18 +124,19 @@ const RoulettePage = () => {
           throw new Error('Network response was not ok');
         }
 
-        if (!response.data || response.data.length === 0) {
+        const result = await response.json();
+
+        if(!result || result.length ===0) {
           throw new Error('No restaurants found');
         }
-
-        const result = await response.json();
+        console.log(result);
         setPageData(result);
       }catch(error){
         setError(error);
         console.log(error);
         // Setting state as dummyData for testing and quality of life
+        setPageData(DummyData)
         // Must be removed
-        setPageData(DummyData);
       }finally{
         setLoading(false);
       }
@@ -187,26 +191,26 @@ const RoulettePage = () => {
             </button>
           </div>
   
-          <RoulettePro
-            prizes={prizeList}
+          {selectedFoods.length > 0 && (
+          <MyRouletteComponent
+            prizeList={prizeList}
             prizeIndex={prizeIndex}
             start={start}
-            onPrizeDefined={handlePrizeDefined}
-            defaultDesignOptions={{
-              prizesWithText: true,
-            }}
-            style={{ width: '100%', height: 'auto' }}
-            className="max-w-full"
+            handlePrizeDefined={handlePrizeDefined}
           />
+          )}
+  
             <div className="flex justify-center my-4"> {/* Flex container to center the button */}
+            {selectedFoods.length > 0 && (              
               <button
                 onClick={handleStart}
                 className="bg-red-500 text-white font-bold px-10 py-2 rounded-lg shadow-lg focus:outline-none"
               >
                 SPIN ME!
-              </button>
+              </button>)}
             </div>
             </div>
+  
             <SelectedRestaurants
             selectedFoods={selectedFoods}
             handleList={handleRemoveFood}
@@ -217,41 +221,73 @@ const RoulettePage = () => {
   }
 
   return (
-    <div className='relative h-screen w-full'>
-      <button onClick={() => {checkContextState()}}>check state</button>
-      <DiscoveryPopUp 
-        restaurantsList={pageData}
-        handleList={handleAddFood}
-        selectedFoods={selectedFoods}
+    <div className="relative h-screen w-full flex">
+      <div>
+        <Sidebar />
+      </div>
+
+      <div className="flex-1 p-4 relative bg-gray-200 overflow-x-auto">
+        <div>
+        <DiscoveryPopUp
+          restaurantsList={pageData}
+          handleList={handleAddFood}
+          selectedFoods={selectedFoods}
+          isOpen={PopUpOpen}
+          onClose={() => setPopUpOpen(false)}
         />
-      <button
-        onClick={surpriseMe}
-        className="bg-gray-500 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-gray-600 focus:outline-none"
-      >
-        Surprise me!
-      </button>  
-      <button
-        onClick={handleStart}
-        className="bg-gray-500 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-gray-600 focus:outline-none"
-      >
-        Spin me!
-      </button> 
-      <RoulettePro
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 mb-48">
+          <button
+            onClick={togglePopUp}
+            className="bg-white text-red-500 font-bold px-4 py-2 rounded-lg shadow-lg focus:outline-none"
+          >
+            SEARCH RESTAURANTS
+          </button>
+          <button
+            onClick={surpriseMe}
+            className="bg-white text-red-500 font-bold px-4 py-2 rounded-lg shadow-lg focus:outline-none"
+          >
+            SURPIRSE ME!
+          </button>
+        </div>
+
+        {selectedFoods.length > 0 && (
+        <MyRouletteComponent
+          prizeList={prizeList}
+          prizeIndex={prizeIndex}
+          start={start}
+          handlePrizeDefined={handlePrizeDefined}
+        />
+        )}
+
+        {/* <RoulettePro
           prizes={prizeList}
           prizeIndex={prizeIndex}
           start={start}
           onPrizeDefined={handlePrizeDefined}
           defaultDesignOptions={{
-            wheelDesign: 'default',
-            prizeDesign: 'default',
-            prizesWithText: true
+            prizesWithText: true,
           }}
-          className="w-full h-full"
-      />
-      <SelectedRestaurants
-        selectedFoods={selectedFoods}
-        handleList={handleRemoveFood}
-      />
+          style={{ width: '100%', height: 'auto' }}
+          className="max-w-full"
+        /> */}
+
+          <div className="flex justify-center my-4"> {/* Flex container to center the button */}
+          {selectedFoods.length > 0 && (              
+            <button
+              onClick={handleStart}
+              className="bg-red-500 text-white font-bold px-10 py-2 rounded-lg shadow-lg focus:outline-none"
+            >
+              SPIN ME!
+            </button>)}
+          </div>
+          </div>
+
+          <SelectedRestaurants
+          selectedFoods={selectedFoods}
+          handleList={handleRemoveFood}
+        />
+      </div>
     </div>
   );
 };

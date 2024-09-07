@@ -48,24 +48,33 @@ def getWoltRestaurants(lat: float, lng: float) -> list[Restaurant]:
     ### City not found response: {"created": {"$date": 1723549372743}, "expires_in_seconds": 900, "name": "restaurants", "page_title": "Restaurants", "sections": [{"description": "It\u2019s not you, it\u2019s us! We\u2019re working hard to expand and hope to come to your area soon \ud83d\ude0c", "link": {"target": "", "target_sort": "delivers-to", "target_title": "", "title": "", "type": "no-link"}, "name": "no-content", "template": "no-content", "title": "There aren\u2019t any restaurants on Wolt near you yet \ud83d\ude15"}], "show_large_title": false, "show_map": false, "track_id": "discovery:restaurants"}
 
     restaurant_list = []
-    # print(json.dumps(response_object['sections'][1]['items'][0]))
+    # print(json.dumps(response_object['sections'][1]['items'][0]['venue']['rating']['score']))
     try:
         for provider in response_object['sections'][1]['items']:
-            if provider['venue']['delivers'] == True:
+                if provider['venue']['delivers'] == True:
 
-                restaurant = Restaurant(
-                        wolt = True,
-                        url = provider['link']['target'],
-                        name=provider['title'],
-                        address=provider['venue']['address'],
-                        estimated_delivery_time=formatWoltDeliveryTime(provider['venue']['estimate_range']),
-                        tags=provider['filtering']['filters'][0]['values'],
-                        image=provider['image']['url'],
-                        #TODO delivery price, for regular users
-                        delivery_price='0'
-                        )
-                restaurant_list.append(restaurant)
+                    rating_info = provider.get('venue', {}).get('rating', {})
+                    rating_score = rating_info.get('score')
+
+                    if rating_score is None:
+                         rating_score = 3
+                    
+                    restaurant = Restaurant(
+                            wolt = True,
+                            url = provider['link']['target'],
+                            name=provider['title'],
+                            address=provider['venue']['address'],
+                            estimated_delivery_time=formatWoltDeliveryTime(provider['venue']['estimate_range']),
+                            tags=provider['filtering']['filters'][0]['values'],
+                            image=provider['image']['url'],
+                            # rating=provider_rating,
+                            #TODO delivery price, for regular users
+
+                            delivery_price='0'
+                            )
+                    restaurant_list.append(restaurant)
     except:
+        print("error")
         return restaurant_list
 
 

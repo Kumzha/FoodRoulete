@@ -10,9 +10,9 @@ export default function ProviderSelection( props ) {
         <Image
             alt='Food provider logo'
             src={`/${props.provider}foodicon.png`}
-            width={75}
-            height={75}
-            className='rounded-lg'
+            width={65}
+            height={65}
+            className={`rounded-3xl transition-filter ${!props.isOn ? 'filter grayscale' : ''}`}
         />
         <ToggleSwitch isOnHandler={props.isOnHandler}/>
     </div>
